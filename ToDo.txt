@@ -1,1 +1,75 @@
-Everything.
+ToDo List for intellileague iPhone Project
+
+I created a developer account on the Riot API
+Our API Key is: 2472734e-3298-44d5-b026-b21e290f7959
+
+We use it like this:
+
+https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/Kameros?api_key=2472734e-3298-44d5-b026-b21e290f7959
+
+This returns: {"kameros":{"id":25175759,"name":"Kameros","profileIconId":7,"summonerLevel":30,"revisionDate":1457149807000}}
+
+
+Our request limit is 10 requests per 10 seconds,
+and 500 requests per 10 mins.
+
+App Start:
+——————————————
+Enter League username, or continue as anonymous.
+
+(Should people log in with password? Or is it good enough that
+ they just enter their league account name)
+
+League Username Entered:
+——————————————
+ - View Match History
+ - View Current game?
+ - View Champion mastery?
+ - View Current Ranked League? (View your current league, like gold5 or whatever)
+
+
+Postable Builds:
+———————————————
+ - Anonymous Viewers can view posted builds
+ - Users that enter their League username can post builds
+
+
+Riot API:
+————————————————
+
+ - Weekly Free Champion List
+	- Clicking Champion Points to our build list for that champion
+	- Endpoint: “champion-v1.2”
+	- Example : “/api/lol/na/v1.2/champion?api_key=<ourkey>”
+
+ - View Current Game
+	- Requires Username Entered
+	- Endpoint: “current-game-v1.0”
+
+ - List of Featured Game modes 
+	- I assume this means like URF or One for All
+	- Endpoint: “game-v1.3”
+
+ - View Current League Information (Ex: Gold 5)
+	- Requires Username Entered
+	- Endpoint: “league-v2.5”
+
+ - View Ranked Stats
+	- Requires Username Entered
+	- Endpoint: “stats-v1.3”
+
+ - View Account Information (Masteries/Runes)
+	- Requires Username Entered
+	- Endpoint: “summoner-v1.4”
+
+
+API Return Examples:
+————————————————————————
+
+ - Weekly Free Champion Rotation:
+	- https://na.api.pvp.net/api/lol/na/v1.2/champion/266?api_key=2472734e-3298-44d5-b026-b21e290f7959
+	- Returns: {"id" 266,"active":true,"botEnabled":false,"freeToPlay":true,"botMmEnabled":false,"rankedPlayEnabled":true}
+	
+	- Instead of the above query, you can do: https://na.api.pvp.net/api/lol/na/v1.2/champion?api_key=2472734e-3298-44d5-b026-b21e290f7959
+	- And it will return all of the free champions, instead of just the one by id you entered.
+
