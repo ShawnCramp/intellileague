@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		88CBCADE1C8B73FD00957075 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CBCADD1C8B73FD00957075 /* AppDelegate.swift */; };
-		88CBCAE01C8B73FD00957075 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CBCADF1C8B73FD00957075 /* ViewController.swift */; };
 		88CBCAE31C8B73FD00957075 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CBCAE11C8B73FD00957075 /* Main.storyboard */; };
 		88CBCAE51C8B73FD00957075 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88CBCAE41C8B73FD00957075 /* Assets.xcassets */; };
 		88CBCAE81C8B73FD00957075 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CBCAE61C8B73FD00957075 /* LaunchScreen.storyboard */; };
 		88CBCAF31C8B73FD00957075 /* intellileagueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CBCAF21C8B73FD00957075 /* intellileagueTests.swift */; };
 		88CBCAFE1C8B73FD00957075 /* intellileagueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CBCAFD1C8B73FD00957075 /* intellileagueUITests.swift */; };
+		88CBCB0C1C8B7F2400957075 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CBCB0B1C8B7F2400957075 /* LoginViewController.swift */; };
+		88CBCB0E1C8B7FB500957075 /* SummonerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CBCB0D1C8B7FB500957075 /* SummonerInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,6 @@
 /* Begin PBXFileReference section */
 		88CBCADA1C8B73FD00957075 /* intellileague.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = intellileague.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CBCADD1C8B73FD00957075 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		88CBCADF1C8B73FD00957075 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		88CBCAE21C8B73FD00957075 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		88CBCAE41C8B73FD00957075 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88CBCAE71C8B73FD00957075 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +47,8 @@
 		88CBCAF91C8B73FD00957075 /* intellileagueUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = intellileagueUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CBCAFD1C8B73FD00957075 /* intellileagueUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = intellileagueUITests.swift; sourceTree = "<group>"; };
 		88CBCAFF1C8B73FD00957075 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88CBCB0B1C8B7F2400957075 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		88CBCB0D1C8B7FB500957075 /* SummonerInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummonerInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		88CBCAD11C8B73FD00957075 = {
 			isa = PBXGroup;
 			children = (
+				88CBCB0D1C8B7FB500957075 /* SummonerInfo.swift */,
 				88CBCADC1C8B73FD00957075 /* intellileague */,
 				88CBCAF11C8B73FD00957075 /* intellileagueTests */,
 				88CBCAFC1C8B73FD00957075 /* intellileagueUITests */,
@@ -98,11 +101,11 @@
 			isa = PBXGroup;
 			children = (
 				88CBCADD1C8B73FD00957075 /* AppDelegate.swift */,
-				88CBCADF1C8B73FD00957075 /* ViewController.swift */,
 				88CBCAE11C8B73FD00957075 /* Main.storyboard */,
 				88CBCAE41C8B73FD00957075 /* Assets.xcassets */,
 				88CBCAE61C8B73FD00957075 /* LaunchScreen.storyboard */,
 				88CBCAE91C8B73FD00957075 /* Info.plist */,
+				88CBCB0B1C8B7F2400957075 /* LoginViewController.swift */,
 			);
 			path = intellileague;
 			sourceTree = "<group>";
@@ -256,8 +259,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88CBCAE01C8B73FD00957075 /* ViewController.swift in Sources */,
+				88CBCB0C1C8B7F2400957075 /* LoginViewController.swift in Sources */,
 				88CBCADE1C8B73FD00957075 /* AppDelegate.swift in Sources */,
+				88CBCB0E1C8B7FB500957075 /* SummonerInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

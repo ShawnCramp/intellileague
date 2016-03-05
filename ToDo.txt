@@ -1,5 +1,7 @@
 ToDo List for intellileague iPhone Project
 
+Fuck the police, lets just say you have to enter your summoner name to use the app, makes things way easier.
+
 I created a developer account on the Riot API
 Our API Key is: 2472734e-3298-44d5-b026-b21e290f7959
 
