@@ -1,19 +1,19 @@
 //
-//  LoginViewController.swift
+//  IndexViewController.swift
 //  intellileague
 //
-//  Created by Shawn Cramp on 2016-03-05.
+//  Created by Shawn Cramp on 2016-03-13.
 //  Copyright © 2016 MIT iPhone. All rights reserved.
 //
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class IndexViewController: UIViewController {
     
-    let LOGINSEGUE = "loginSegue"
+    /*
+    No idea whats going on here, but I can't seem to get the images to line up properlly
     
-    @IBOutlet weak var textSummonerName: UITextField!
-    //@IBOutlet weak var buttonEnter: UIButton!
+    */
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,27 +26,15 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
-        // For some reason this is giving me an error...
-        if segue.identifier == LOGINSEGUE {
-            
-            // Save Summoner Name for use in the App
-            //_ = SummonerInfo()
-            //SummonerInfo.summoner.name = textSummonerName.text!
-            
-            print("test")
-            
-            
-        }
-        
-        
     }
-    
+    */
 
 }
