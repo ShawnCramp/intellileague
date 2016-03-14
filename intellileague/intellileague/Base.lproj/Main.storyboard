@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -198,7 +199,42 @@
                     <view key="view" contentMode="scaleToFill" id="gHp-iR-MRA">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple" translatesAutoresizingMaskIntoConstraints="NO" id="z0A-6v-h9Q">
+                                <rect key="frame" x="52" y="52" width="72" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72" id="4KQ-ko-K6c"/>
+                                    <constraint firstAttribute="width" constant="72" id="U9t-vJ-aId"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Bb-Kb-azS">
+                                <rect key="frame" x="148" y="52" width="79" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ihb-Zl-Mie">
+                                <rect key="frame" x="148" y="92" width="40" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recent Game Averages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBc-uY-Il1">
+                                <rect key="frame" x="52" y="179" width="178" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ihb-Zl-Mie" firstAttribute="top" secondItem="0Bb-Kb-azS" secondAttribute="bottom" constant="4" id="NOv-qj-tG6"/>
+                            <constraint firstItem="Ihb-Zl-Mie" firstAttribute="leading" secondItem="z0A-6v-h9Q" secondAttribute="trailing" constant="24" id="l8e-Ye-Vee"/>
+                            <constraint firstItem="z0A-6v-h9Q" firstAttribute="leading" secondItem="gHp-iR-MRA" secondAttribute="leadingMargin" constant="32" id="oku-yp-T4r"/>
+                            <constraint firstItem="z0A-6v-h9Q" firstAttribute="top" secondItem="6RX-gm-fBO" secondAttribute="bottom" constant="32" id="qDG-mN-l5m"/>
+                            <constraint firstItem="0Bb-Kb-azS" firstAttribute="leading" secondItem="z0A-6v-h9Q" secondAttribute="trailing" constant="24" id="rDh-yB-nMe"/>
+                            <constraint firstItem="0Bb-Kb-azS" firstAttribute="top" secondItem="6RX-gm-fBO" secondAttribute="bottom" constant="32" id="rQO-Vn-PeS"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Summoner" id="fe4-7Y-iAw"/>
                 </viewController>
@@ -349,5 +385,8 @@
             <point key="canvasLocation" x="1835" y="2623"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="apple" width="128" height="128"/>
+    </resources>
     <color key="tintColor" red="0.2901960784" green="0.48627450979999998" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
 </document>
