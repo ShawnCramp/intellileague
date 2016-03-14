@@ -1,0 +1,34 @@
+Database Schema Design
+
+User Accounts:
+  Table Name: users
+  Field Names:
+    id
+    username
+    password
+    summonerid
+    
+Item Builds:
+  Table Name: builds
+  Field Names:
+    id
+    owner - FK to user account
+    name
+    patchid
+    champion
+    role
+    description
+    
+Build Row:
+  Table Name: rows
+  Field Names:
+    id
+    build - FK to build
+    title
+    
+Row Items:
+  Table Name: items
+  Field Names:
+    id
+    row - FK to row
+    item
