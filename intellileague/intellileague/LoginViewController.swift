@@ -9,15 +9,22 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    let CORNER_RADIUS : CGFloat = 7.0
+    let BORDERWIDTH : CGFloat = 2.0
     
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
+    
+    @IBOutlet weak var login: UIButton!
+    @IBOutlet weak var signup: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         setUpTextField(username, text: "Username")
         setUpTextField(password, text: "Password")
+        setUpButton(login)
+        setUpButton(signup)
         
     }
     
@@ -27,10 +34,16 @@ class LoginViewController: UIViewController {
     }
     
     func setUpTextField(t: UITextField, text: String) {
-        t.layer.borderWidth = 2.0
+        t.layer.borderWidth = BORDERWIDTH
         t.layer.borderColor = UIColor.lightTextColor().CGColor
+        t.layer.cornerRadius = CORNER_RADIUS
         let placeholder = NSAttributedString(string: text, attributes: [NSForegroundColorAttributeName : UIColor.lightTextColor()])
         t.attributedPlaceholder = placeholder
+    }
+    
+    func setUpButton(b: UIButton) {
+        b.layer.borderWidth = BORDERWIDTH
+        b.layer.cornerRadius = CORNER_RADIUS
     }
     
     // MARK: - Navigation

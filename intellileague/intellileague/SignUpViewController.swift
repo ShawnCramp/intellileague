@@ -9,10 +9,13 @@
 import UIKit
 
 class SignUpViewController: UIViewController {
+    let CORNER_RADIUS : CGFloat = 7.0
+    let BORDERWIDTH : CGFloat = 2.0
 
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var summoner: UITextField!
+    @IBOutlet weak var signup: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +23,7 @@ class SignUpViewController: UIViewController {
         setUpTextField(username, text: "Username")
         setUpTextField(password, text: "Password")
         setUpTextField(summoner, text: "Summoner name")
+        setUpButton(signup)
         
     }
     
@@ -29,12 +33,17 @@ class SignUpViewController: UIViewController {
     }
     
     func setUpTextField(t: UITextField, text: String) {
-        t.layer.borderWidth = 2.0
+        t.layer.borderWidth = BORDERWIDTH
         t.layer.borderColor = UIColor.lightTextColor().CGColor
+        t.layer.cornerRadius = CORNER_RADIUS
         let placeholder = NSAttributedString(string: text, attributes: [NSForegroundColorAttributeName : UIColor.lightTextColor()])
         t.attributedPlaceholder = placeholder
     }
     
+    func setUpButton(b: UIButton) {
+        b.layer.borderWidth = BORDERWIDTH
+        b.layer.cornerRadius = CORNER_RADIUS
+    }
 
     /*
     // MARK: - Navigation
