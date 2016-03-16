@@ -28,10 +28,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jp7-ka-Lma">
                                 <rect key="frame" x="282" y="207" width="37" height="30"/>
                                 <state key="normal" title="Enter"/>
-                                <connections>
-                                    <action selector="buttonEnter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tUP-q5-8xQ"/>
-                                    <segue destination="wrU-k2-tym" kind="presentation" id="6lJ-p8-3eG"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summoner Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CvC-cl-UYQ">
                                 <rect key="frame" x="234" y="124" width="133" height="21"/>
@@ -39,11 +35,27 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6u-GR-Rbb">
+                                <rect key="frame" x="279" y="289" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7X-3n-fZu">
+                                <rect key="frame" x="279" y="326" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="N7X-3n-fZu" firstAttribute="top" secondItem="j6u-GR-Rbb" secondAttribute="bottom" constant="16" id="8qX-z6-0gg"/>
+                            <constraint firstItem="j6u-GR-Rbb" firstAttribute="centerX" secondItem="Jp7-ka-Lma" secondAttribute="centerX" id="FKz-5Y-Peo"/>
+                            <constraint firstItem="j6u-GR-Rbb" firstAttribute="leading" secondItem="N7X-3n-fZu" secondAttribute="leading" id="HGu-0U-quI"/>
                             <constraint firstItem="Jp7-ka-Lma" firstAttribute="centerX" secondItem="Xzo-we-Gzp" secondAttribute="centerX" id="LDY-An-523"/>
                             <constraint firstItem="CvC-cl-UYQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LLo-Rb-O4R"/>
+                            <constraint firstItem="j6u-GR-Rbb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LlV-h6-oxU"/>
                             <constraint firstItem="CvC-cl-UYQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="104" id="LzM-xr-cN5"/>
                             <constraint firstItem="CvC-cl-UYQ" firstAttribute="centerX" secondItem="Xzo-we-Gzp" secondAttribute="centerX" id="nnL-NN-tWe"/>
                             <constraint firstItem="Xzo-we-Gzp" firstAttribute="top" secondItem="CvC-cl-UYQ" secondAttribute="bottom" constant="13" id="p0U-gW-kgu"/>
@@ -51,8 +63,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="buttonEnter" destination="Jp7-ka-Lma" id="alY-mE-Gmq"/>
-                        <outlet property="textSummonerName" destination="Xzo-we-Gzp" id="d9S-T7-OwR"/>
+                        <outlet property="ipLabel" destination="j6u-GR-Rbb" id="6RL-Fg-PXM"/>
+                        <outlet property="postResultLabel" destination="N7X-3n-fZu" id="YOd-ol-nNa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

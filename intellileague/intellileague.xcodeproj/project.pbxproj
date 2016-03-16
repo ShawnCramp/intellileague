@@ -488,6 +488,7 @@
 				88CBCB041C8B73FD00957075 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		88CBCB051C8B73FD00957075 /* Build configuration list for PBXNativeTarget "intellileagueTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +497,7 @@
 				88CBCB071C8B73FD00957075 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		88CBCB081C8B73FD00957075 /* Build configuration list for PBXNativeTarget "intellileagueUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +506,7 @@
 				88CBCB0A1C8B73FD00957075 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
