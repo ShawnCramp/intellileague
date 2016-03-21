@@ -10,7 +10,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     let CORNER_RADIUS : CGFloat = 7.0
-    let BORDERWIDTH : CGFloat = 2.0
+    let BORDERWIDTH : CGFloat = 0.5
     
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -35,14 +35,15 @@ class LoginViewController: UIViewController {
     
     func setUpTextField(t: UITextField, text: String) {
         t.layer.borderWidth = BORDERWIDTH
-        t.layer.borderColor = UIColor.lightTextColor().CGColor
+        t.layer.borderColor = UIColor.darkGrayColor().CGColor
         t.layer.cornerRadius = CORNER_RADIUS
-        let placeholder = NSAttributedString(string: text, attributes: [NSForegroundColorAttributeName : UIColor.lightTextColor()])
+        let placeholder = NSAttributedString(string: text, attributes: [NSForegroundColorAttributeName : UIColor.darkGrayColor()])
         t.attributedPlaceholder = placeholder
     }
     
     func setUpButton(b: UIButton) {
         b.layer.borderWidth = BORDERWIDTH
+        b.layer.borderColor = UIColor.clearColor().CGColor
         b.layer.cornerRadius = CORNER_RADIUS
     }
     
