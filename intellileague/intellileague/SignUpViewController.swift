@@ -1,21 +1,20 @@
 //
-//  LoginViewController.swift
+//  SignUpViewController.swift
 //  intellileague
 //
-//  Created by Shawn Cramp on 2016-03-05.
+//  Created by Don Miguel on 2016-03-14.
 //  Copyright © 2016 MIT iPhone. All rights reserved.
 //
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class SignUpViewController: UIViewController {
     let CORNER_RADIUS : CGFloat = 7.0
     let BORDERWIDTH : CGFloat = 0.5
-    
+
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
-    
-    @IBOutlet weak var login: UIButton!
+    @IBOutlet weak var summoner: UITextField!
     @IBOutlet weak var signup: UIButton!
     
     override func viewDidLoad() {
@@ -23,7 +22,7 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         setUpTextField(username, text: "Username")
         setUpTextField(password, text: "Password")
-        setUpButton(login)
+        setUpTextField(summoner, text: "Summoner name")
         setUpButton(signup)
         
     }
@@ -46,28 +45,15 @@ class LoginViewController: UIViewController {
         b.layer.borderColor = UIColor.clearColor().CGColor
         b.layer.cornerRadius = CORNER_RADIUS
     }
-    
+
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
-        // For some reason this is giving me an error...
-//        if buttonEnter === sender {
-//            
-//            // Save Summoner Name for use in the App
-//            _ = SummonerInfo()
-//            SummonerInfo.summoner.name = textSummonerName.text!
-//            
-//            print("test")
-//            
-//            
-//        }
-        
-        
     }
-    
+    */
 
 }

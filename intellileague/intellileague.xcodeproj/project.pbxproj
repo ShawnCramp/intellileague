@@ -15,6 +15,9 @@
 		88CBCAFE1C8B73FD00957075 /* intellileagueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CBCAFD1C8B73FD00957075 /* intellileagueUITests.swift */; };
 		88CBCB0C1C8B7F2400957075 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CBCB0B1C8B7F2400957075 /* LoginViewController.swift */; };
 		88CBCB0E1C8B7FB500957075 /* SummonerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CBCB0D1C8B7FB500957075 /* SummonerInfo.swift */; };
+		D2BA89451CA09B0D00FBAB21 /* ChampsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BA89441CA09B0D00FBAB21 /* ChampsTableViewController.swift */; };
+		D2BA89471CA09B2800FBAB21 /* ChampTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BA89461CA09B2800FBAB21 /* ChampTableViewCell.swift */; };
+		D2ED0C3F1C975A430079190E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ED0C3E1C975A430079190E /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		88CBCAFF1C8B73FD00957075 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88CBCB0B1C8B7F2400957075 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		88CBCB0D1C8B7FB500957075 /* SummonerInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummonerInfo.swift; sourceTree = "<group>"; };
+		D2BA89441CA09B0D00FBAB21 /* ChampsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChampsTableViewController.swift; sourceTree = "<group>"; };
+		D2BA89461CA09B2800FBAB21 /* ChampTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChampTableViewCell.swift; sourceTree = "<group>"; };
+		D2ED0C3E1C975A430079190E /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,10 +108,13 @@
 			children = (
 				88CBCADD1C8B73FD00957075 /* AppDelegate.swift */,
 				88CBCAE11C8B73FD00957075 /* Main.storyboard */,
+				D2BA89441CA09B0D00FBAB21 /* ChampsTableViewController.swift */,
+				D2BA89461CA09B2800FBAB21 /* ChampTableViewCell.swift */,
 				88CBCAE41C8B73FD00957075 /* Assets.xcassets */,
 				88CBCAE61C8B73FD00957075 /* LaunchScreen.storyboard */,
 				88CBCAE91C8B73FD00957075 /* Info.plist */,
 				88CBCB0B1C8B7F2400957075 /* LoginViewController.swift */,
+				D2ED0C3E1C975A430079190E /* SignUpViewController.swift */,
 			);
 			path = intellileague;
 			sourceTree = "<group>";
@@ -260,7 +269,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				88CBCB0C1C8B7F2400957075 /* LoginViewController.swift in Sources */,
+				D2BA89451CA09B0D00FBAB21 /* ChampsTableViewController.swift in Sources */,
 				88CBCADE1C8B73FD00957075 /* AppDelegate.swift in Sources */,
+				D2BA89471CA09B2800FBAB21 /* ChampTableViewCell.swift in Sources */,
+				D2ED0C3F1C975A430079190E /* SignUpViewController.swift in Sources */,
 				88CBCB0E1C8B7FB500957075 /* SummonerInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +500,7 @@
 				88CBCB041C8B73FD00957075 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		88CBCB051C8B73FD00957075 /* Build configuration list for PBXNativeTarget "intellileagueTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +509,7 @@
 				88CBCB071C8B73FD00957075 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		88CBCB081C8B73FD00957075 /* Build configuration list for PBXNativeTarget "intellileagueUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +518,7 @@
 				88CBCB0A1C8B73FD00957075 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
