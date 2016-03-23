@@ -39,6 +39,9 @@
                                 </constraints>
                                 <color key="tintColor" red="1" green="0.96470588235294119" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Log in"/>
+                                <connections>
+                                    <segue destination="fjT-wt-CsW" kind="presentation" id="jP6-oE-ezn"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="moF-Ie-M1u">
                                 <rect key="frame" x="202" y="254" width="196" height="36"/>
@@ -189,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zpU-ZP-Iwr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1074" y="1113"/>
+            <point key="canvasLocation" x="532" y="1197"/>
         </scene>
         <!--Summoner Profile-->
         <scene sceneID="osA-6u-tq3">
@@ -338,7 +341,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="llS-hc-FKe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1074" y="1883"/>
+            <point key="canvasLocation" x="1074" y="1993"/>
         </scene>
         <!--Champions-->
         <scene sceneID="6vJ-Lm-Mox">
@@ -484,5 +487,8 @@
     <resources>
         <image name="apple" width="128" height="128"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="OrM-LK-Xs3"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.96470588239999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
 </document>
