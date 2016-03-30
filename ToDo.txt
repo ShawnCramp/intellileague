@@ -75,3 +75,6 @@ API Return Examples:
 	- Instead of the above query, you can do: https://na.api.pvp.net/api/lol/na/v1.2/champion?api_key=2472734e-3298-44d5-b026-b21e290f7959
 	- And it will return all of the free champions, instead of just the one by id you entered.
 
+
+http://ddragon.leagueoflegends.com/cdn/4.18.1/img/champion/Renekton.png
+ddragon.leagueoflegends.com/cdn/4.18.1/img/champion/imageName/Anivia.png
