@@ -11,7 +11,7 @@ import UIKit
 class ChampsTableViewController: UITableViewController {
 
     var champNames : [String] = []
-    var champImages : [NSURL] = []
+    var champImages = [NSURL]()
     var champData = [NSData?]()
     
     @IBOutlet weak var nav: UINavigationItem!
@@ -58,7 +58,7 @@ class ChampsTableViewController: UITableViewController {
         
         if let i = champData[indexPath.row] {
             cell.champImg.image = UIImage(data: i)
-            print(i)
+            // print(i)
         }
 
         return cell
@@ -117,19 +117,27 @@ class ChampsTableViewController: UITableViewController {
     */
     
     func asyncGetImages(){
+        var threadcount = 0
         let imageQ = dispatch_queue_create("Image Q", DISPATCH_QUEUE_CONCURRENT);
         
         for (i, image) in champImages.enumerate() {
             dispatch_async(imageQ, {
+                threadcount += 1
+                print("Threads \(threadcount)")
+                
                 print("In Dispatch")
                 print(image)
                 
                 self.champData[i] = NSData(contentsOfURL: image)!
                 dispatch_async(dispatch_get_main_queue(), {
-                    print(i)
+                    // print(i)
                     self.tableView.reloadData()
+                    threadcount -= 1
                 })
             })
+            usleep(10000)
+            print("Threads \(threadcount)")
+
         }
     }
     
@@ -170,6 +178,7 @@ class ChampsTableViewController: UITableViewController {
                     print(sortedOrigin)
                     
                     // Update the label
+                    var count = 0
                     for i in sortedOrigin {
                         print(i)
                         
@@ -177,13 +186,22 @@ class ChampsTableViewController: UITableViewController {
                         let imageData = champData["image"] as! NSDictionary
                         let imageName = imageData["full"] as! String
                         
-                        self.champImages.append(NSURL(string: "ddragon.leagueoflegends.com/cdn/4.18.1/img/champion/\(imageName)")!)
+                        self.champImages.append(NSURL(string: "http://ddragon.leagueoflegends.com/cdn/6.6.1/img/champion/\(imageName)")!)
                         self.champNames.append(i)
                         self.champData.append(nil)
                         
+                        /*
+                        count+=1
+                        if count == 3 {
+                            break
+                        }
+                        */
+
+
                     }
                     
                     self.asyncGetImages()
+                    print("Champ Name Count: \(self.champNames.count)")
                     print("Champ Image Count: \(self.champImages.count)")
                     print("Champ Data Count: \(self.champData.count)")
                     // self.tableView.reloadData()
@@ -194,10 +212,6 @@ class ChampsTableViewController: UITableViewController {
                 print("bad things happened")
             }
         }).resume()
-    }
-    
-    func insertList(text: String) {
-        champNames.append(text)
     }
 
 }
