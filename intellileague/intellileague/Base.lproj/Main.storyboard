@@ -197,7 +197,7 @@
         <!--Summoner Profile-->
         <scene sceneID="osA-6u-tq3">
             <objects>
-                <viewController id="Ics-GC-65M" sceneMemberID="viewController">
+                <viewController id="Ics-GC-65M" customClass="SummonerViewController" customModule="intellileague" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6RX-gm-fBO"/>
                         <viewControllerLayoutGuide type="bottom" id="hHb-mW-t75"/>
@@ -248,6 +248,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Summoner Profile" id="Wtt-QX-Toq"/>
+                    <connections>
+                        <outlet property="summonerIcon" destination="z0A-6v-h9Q" id="J7o-Cf-6DH"/>
+                        <outlet property="summonerLevel" destination="Ihb-Zl-Mie" id="vF0-CH-44f"/>
+                        <outlet property="summonerName" destination="0Bb-Kb-azS" id="QtB-2D-xPB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Anz-t9-KVZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

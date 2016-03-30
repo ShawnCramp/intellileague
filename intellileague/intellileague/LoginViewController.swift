@@ -55,16 +55,16 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
         
         // For some reason this is giving me an error...
-//        if buttonEnter === sender {
-//            
-//            // Save Summoner Name for use in the App
-//            _ = SummonerInfo()
-//            SummonerInfo.summoner.name = textSummonerName.text!
-//            
-//            print("test")
-//            
-//            
-//        }
+        if login === sender {
+        
+            // Save Summoner Name for use in the App
+            _ = SummonerInfo()
+            SummonerInfo.summoner.name = username.text!
+        
+            print(SummonerInfo.summoner.name)
+        
+        
+        }
         
         
     }
