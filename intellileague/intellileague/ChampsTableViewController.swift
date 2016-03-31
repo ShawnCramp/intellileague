@@ -121,12 +121,12 @@ class ChampsTableViewController: UITableViewController {
         
         for (i, image) in champImages.enumerate() {
             dispatch_async(imageQ, {
-                print("In Dispatch")
-                print(image)
+                //print("In Dispatch")
+                //print(image)
                 
                 self.champData[i] = NSData(contentsOfURL: image)!
                 dispatch_async(dispatch_get_main_queue(), {
-                    print(i)
+                    //print(i)
                     self.tableView.reloadData()
                 })
             })

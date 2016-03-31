@@ -97,7 +97,7 @@ class SummonerViewController: UIViewController {
                     self.performSelectorOnMainThread("updateLevel:", withObject: sumLevel, waitUntilDone: false)
                     
                     // Get Match History
-                    self.summonerMatchHistory(sumID)
+                    self.summonerStatistic(sumID)
                 }
             } catch {
                 print("bad things happened")
@@ -105,7 +105,9 @@ class SummonerViewController: UIViewController {
         }).resume()
     }
     
-    func summonerMatchHistory(id: Int) {
+    
+    // Summoner Statistics
+    func summonerStatistic(id: Int) {
         
         // Get Time Interval and set it back 1 week
         var timeInterval = NSDate().timeIntervalSince1970
@@ -114,7 +116,7 @@ class SummonerViewController: UIViewController {
         print(timeIntervalWeek)
         
         // Setup the session to make REST GET call.  Notice the URL is https NOT http!!
-        let postEndpoint: String = "https://na.api.pvp.net/api/lol/na/v2.2/matchlist/by-summoner/\(id)?beginTime=\(timeIntervalWeek)&api_key=2472734e-3298-44d5-b026-b21e290f7959"
+        let postEndpoint: String = "https://na.api.pvp.net/api/lol/na/v1.3/stats/by-summoner/\(id)/summary?season=SEASON2016&api_key=2472734e-3298-44d5-b026-b21e290f7959"
         let session = NSURLSession.sharedSession()
         let url = NSURL(string: postEndpoint)!
         
@@ -137,7 +139,22 @@ class SummonerViewController: UIViewController {
                     let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
                     
                     // Get Summoner Information from Returned Object
-                    // let origin = jsonDictionary[name] as! NSDictionary
+                    let playerSummary = jsonDictionary["playerStatSummaries"] as! NSArray
+                    print(playerSummary)
+                    
+                    // Get Summoner Unranked Information
+                    let playerUnranked = playerSummary[8]
+                    print("Player Unranked:\n")
+                    print(playerUnranked)
+                    print("Player Unranked Champion Kills:\n")
+                    print(playerUnranked)
+                    
+                    // Get Summoner Ranked Information
+                    let playerRanked = playerSummary[9]
+                    print("Player Ranked:\n")
+                    print(playerRanked)
+                    
+                    
                     
                     // Dispatch Threads to Edit Summoner Information
                     //self.performSelectorOnMainThread("updateName:", withObject: sumName, waitUntilDone: false)
