@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var invalidLoginLabel: UILabel!
     
     @IBOutlet weak var login: UIButton!
     @IBOutlet weak var signup: UIButton!
@@ -51,8 +52,8 @@ class LoginViewController: UIViewController {
         b.layer.cornerRadius = CORNER_RADIUS
     }
     
-    // MARK: - Navigation
     
+    // MARK: - Navigation
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
         if login === sender {
             self.statusGet = true
@@ -70,11 +71,13 @@ class LoginViewController: UIViewController {
                 
             } else {
                 print("no")
+                invalidLoginLabel.text = "Invalid Login"
                 return false
             }
         }
         
-        return false
+        return true
+        
     }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -88,7 +91,7 @@ class LoginViewController: UIViewController {
             // Save Summoner Name for use in the App
             _ = SummonerInfo()
             SummonerInfo.summoner.name = username.text!
-            SummonerInfo.summoner.summoner = "test"
+            SummonerInfo.summoner.summoner = summonerName
             
         }
         
@@ -122,19 +125,21 @@ class LoginViewController: UIViewController {
                     // Print what we got from the call
                     print(ipString)
                     
-                    // Parse the JSON to get the IP
-                    let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSArray
-                    
-                    let origin = jsonDictionary[0] as! NSDictionary
-                    let password = origin["password"] as! String
-                    print("Password: \(password)")
-                    
-                    if password == self.password.text! {
-                        print("Password Check")
-                        self.validLogin = true
+                    if ipString != "[]" {
+                        // Parse the JSON to get the IP
+                        let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSArray
                         
-                        self.summonerName = origin["summoner"] as! String
+                        let origin = jsonDictionary[0] as! NSDictionary
+                        let password = origin["password"] as! String
+                        print("Password: \(password)")
                         
+                        if password == self.password.text! {
+                            print("Password Check")
+                            self.validLogin = true
+                            
+                            self.summonerName = origin["summoner"] as! String
+                            
+                        }
                     }
                     
                     // change status to returned

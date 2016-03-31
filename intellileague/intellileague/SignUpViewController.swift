@@ -11,7 +11,11 @@ import UIKit
 class SignUpViewController: UIViewController {
     let CORNER_RADIUS : CGFloat = 7.0
     let BORDERWIDTH : CGFloat = 0.5
+    
+    var statusPost = false
+    var dupUsername = false
 
+    @IBOutlet weak var invalidUsernameLabel: UILabel!
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var summoner: UITextField!
@@ -45,6 +49,30 @@ class SignUpViewController: UIViewController {
         b.layer.borderColor = UIColor.clearColor().CGColor
         b.layer.cornerRadius = CORNER_RADIUS
     }
+    
+    
+    // Check if Username is already in use
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        
+        if signup === sender {
+            self.statusPost = true
+            postDataToURL()
+            
+            while self.statusPost == true {
+                usleep(10000)
+            }
+            
+            if self.dupUsername == false {
+                return true
+            } else {
+                invalidUsernameLabel.text = "Username in use"
+                return false
+            }
+            
+        }
+        
+        return true
+    }
 
     
     // MARK: - Navigation
@@ -55,7 +83,6 @@ class SignUpViewController: UIViewController {
         // Pass the selected object to the new view controller.
         
         if signup === sender {
-            postDataToURL()
             
             // Save Summoner Information
             _ = SummonerInfo()
@@ -96,16 +123,25 @@ class SignUpViewController: UIViewController {
         session.dataTaskWithRequest(request, completionHandler: { ( data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
             // Make sure we get an OK response
             guard let realResponse = response as? NSHTTPURLResponse where
-                realResponse.statusCode == 200 else {
-                    print("Not a 200 response")
+                realResponse.statusCode == 201 else {
+                    print("Not a 201 Created Call")
+                    self.statusPost = false
+                    self.dupUsername = true
                     return
             }
             
             // Read the JSON
             if let postString = NSString(data:data!, encoding: NSUTF8StringEncoding) as? String {
                 // Print what we got from the call
-                print("POST: " + postString)
+                print(postString)
                 
+                if postString.containsString("Summoners with this username already exists") {
+                    self.dupUsername = true
+                } else {
+                    self.dupUsername = false
+                }
+                
+                self.statusPost = false
                 
                 //self.performSelectorOnMainThread("updatePostLabel:", withObject: postString, waitUntilDone: false)
             }

@@ -81,11 +81,23 @@
                                     <segue destination="Zc7-Qj-Bic" kind="show" id="PBb-fV-r8g"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CD2-DE-6r2">
+                                <rect key="frame" x="202" y="424" width="196" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Wuh-Cx-sKf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rLG-IL-vdF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1hr-Dc-rPx"/>
+                            <constraint firstItem="CD2-DE-6r2" firstAttribute="trailing" secondItem="2J3-zr-TEH" secondAttribute="trailing" id="ABP-wr-iNV"/>
                             <constraint firstItem="JDO-GZ-vjr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HQy-JY-xcL"/>
+                            <constraint firstItem="CD2-DE-6r2" firstAttribute="top" secondItem="2J3-zr-TEH" secondAttribute="bottom" constant="14" id="HfR-Xk-2Ca"/>
+                            <constraint firstItem="CD2-DE-6r2" firstAttribute="leading" secondItem="2J3-zr-TEH" secondAttribute="leading" id="Mdp-bn-cZY"/>
                             <constraint firstItem="moF-Ie-M1u" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Phh-cJ-ADW"/>
                             <constraint firstItem="rLG-IL-vdF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="48" id="Sgo-jE-LoG"/>
                             <constraint firstItem="moF-Ie-M1u" firstAttribute="top" secondItem="JDO-GZ-vjr" secondAttribute="bottom" constant="24" id="aFc-Tc-VEb"/>
@@ -98,6 +110,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="kRd-IE-Tvw"/>
                     <connections>
+                        <outlet property="invalidLoginLabel" destination="CD2-DE-6r2" id="SfB-EA-OzR"/>
                         <outlet property="login" destination="eA3-ff-wCw" id="Wsj-pX-oJy"/>
                         <outlet property="password" destination="moF-Ie-M1u" id="h41-xa-SLU"/>
                         <outlet property="signup" destination="2J3-zr-TEH" id="kib-vo-Fbh"/>
@@ -169,10 +182,19 @@
                                     <segue destination="fjT-wt-CsW" kind="presentation" id="OrM-LK-Xs3"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ieb-n1-jQa">
+                                <rect key="frame" x="202" y="352" width="196" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Xeu-V4-hZq" firstAttribute="top" secondItem="Ieb-n1-jQa" secondAttribute="bottom" constant="163" id="8og-Fu-W9x"/>
+                            <constraint firstItem="Ieb-n1-jQa" firstAttribute="trailing" secondItem="hgw-Br-tv0" secondAttribute="trailing" id="Evo-67-orP"/>
                             <constraint firstItem="hgw-Br-tv0" firstAttribute="centerX" secondItem="Vwg-nx-SaN" secondAttribute="centerX" id="Ew8-7n-e4X"/>
+                            <constraint firstItem="Ieb-n1-jQa" firstAttribute="leading" secondItem="hgw-Br-tv0" secondAttribute="leading" id="ITM-d2-SQd"/>
                             <constraint firstItem="Lns-MH-eBO" firstAttribute="top" secondItem="Onl-eQ-qRn" secondAttribute="bottom" constant="24" id="LbS-EG-JGZ"/>
                             <constraint firstItem="Onl-eQ-qRn" firstAttribute="centerX" secondItem="Vwg-nx-SaN" secondAttribute="centerX" id="Qmc-wc-MvC"/>
                             <constraint firstItem="gV0-Q9-nfl" firstAttribute="centerX" secondItem="Vwg-nx-SaN" secondAttribute="centerX" id="b95-RQ-PcG"/>
@@ -180,10 +202,12 @@
                             <constraint firstItem="hgw-Br-tv0" firstAttribute="top" secondItem="gV0-Q9-nfl" secondAttribute="bottom" constant="24" id="ibc-Wz-Cvd"/>
                             <constraint firstItem="gV0-Q9-nfl" firstAttribute="top" secondItem="Lns-MH-eBO" secondAttribute="bottom" constant="24" id="ldJ-sq-wWM"/>
                             <constraint firstItem="Onl-eQ-qRn" firstAttribute="top" secondItem="hgy-Vq-oMu" secondAttribute="bottom" constant="128" id="ool-7H-yz4"/>
+                            <constraint firstItem="Ieb-n1-jQa" firstAttribute="top" secondItem="hgw-Br-tv0" secondAttribute="bottom" constant="8" symbolic="YES" id="q3O-Hq-qhf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Register" id="bNy-ce-1bi"/>
                     <connections>
+                        <outlet property="invalidUsernameLabel" destination="Ieb-n1-jQa" id="JE3-m0-onf"/>
                         <outlet property="password" destination="Lns-MH-eBO" id="glc-kT-BAm"/>
                         <outlet property="signup" destination="hgw-Br-tv0" id="WDt-OU-Zog"/>
                         <outlet property="summoner" destination="gV0-Q9-nfl" id="OBS-w1-H3o"/>
@@ -197,7 +221,7 @@
         <!--Summoner Profile-->
         <scene sceneID="osA-6u-tq3">
             <objects>
-                <viewController id="Ics-GC-65M" sceneMemberID="viewController">
+                <viewController id="Ics-GC-65M" customClass="SummonerViewController" customModule="intellileague" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6RX-gm-fBO"/>
                         <viewControllerLayoutGuide type="bottom" id="hHb-mW-t75"/>
@@ -248,6 +272,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Summoner Profile" id="Wtt-QX-Toq"/>
+                    <connections>
+                        <outlet property="summonerIcon" destination="z0A-6v-h9Q" id="J7o-Cf-6DH"/>
+                        <outlet property="summonerLevel" destination="Ihb-Zl-Mie" id="vF0-CH-44f"/>
+                        <outlet property="summonerName" destination="0Bb-Kb-azS" id="QtB-2D-xPB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Anz-t9-KVZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

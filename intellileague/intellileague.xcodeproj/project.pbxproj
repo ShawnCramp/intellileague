@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88AB2CEA1CAC6BD7009177B6 /* SummonerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB2CE91CAC6BD7009177B6 /* SummonerViewController.swift */; };
 		88CBCADE1C8B73FD00957075 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CBCADD1C8B73FD00957075 /* AppDelegate.swift */; };
 		88CBCAE31C8B73FD00957075 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CBCAE11C8B73FD00957075 /* Main.storyboard */; };
 		88CBCAE51C8B73FD00957075 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88CBCAE41C8B73FD00957075 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		88AB2CE91CAC6BD7009177B6 /* SummonerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummonerViewController.swift; sourceTree = "<group>"; };
 		88CBCADA1C8B73FD00957075 /* intellileague.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = intellileague.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CBCADD1C8B73FD00957075 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88CBCAE21C8B73FD00957075 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				88CBCAE91C8B73FD00957075 /* Info.plist */,
 				88CBCB0B1C8B7F2400957075 /* LoginViewController.swift */,
 				D2ED0C3E1C975A430079190E /* SignUpViewController.swift */,
+				88AB2CE91CAC6BD7009177B6 /* SummonerViewController.swift */,
 			);
 			path = intellileague;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				88CBCB0C1C8B7F2400957075 /* LoginViewController.swift in Sources */,
 				D2BA89451CA09B0D00FBAB21 /* ChampsTableViewController.swift in Sources */,
 				88CBCADE1C8B73FD00957075 /* AppDelegate.swift in Sources */,
+				88AB2CEA1CAC6BD7009177B6 /* SummonerViewController.swift in Sources */,
 				D2BA89471CA09B2800FBAB21 /* ChampTableViewCell.swift in Sources */,
 				D2ED0C3F1C975A430079190E /* SignUpViewController.swift in Sources */,
 				88CBCB0E1C8B7FB500957075 /* SummonerInfo.swift in Sources */,

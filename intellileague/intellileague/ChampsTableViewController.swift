@@ -131,6 +131,7 @@ class ChampsTableViewController: UITableViewController {
                 self.champData[i] = NSData(contentsOfURL: image)!
                 dispatch_async(dispatch_get_main_queue(), {
                     // print(i)
+
                     self.tableView.reloadData()
                     threadcount -= 1
                 })
