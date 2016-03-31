@@ -10,10 +10,10 @@ import UIKit
 
 class ItemsViewController: UIViewController {
 
-    var test : String?
+    var itemData = NSMutableDictionary()
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(test)
+        print(itemData)
         // Do any additional setup after loading the view.
     }
 

@@ -113,8 +113,9 @@ class ItemsTableViewController: UITableViewController {
             // Get the cell that generated this segue.
             if let selectedItemCell = sender as? ItemTableViewCell {
                 let indexPath = tableView.indexPathForCell(selectedItemCell)!
-                let selectedItem = itemNames[indexPath.row]
-                itemsViewController.test = selectedItem
+                let key = self.itemDict.allKeys[indexPath.row]
+                let selectedItem = self.itemDict.valueForKey(key as! String)
+                itemsViewController.itemData = (selectedItem as? NSMutableDictionary)!
             }
         }
     }
@@ -142,7 +143,7 @@ class ItemsTableViewController: UITableViewController {
                 })
             })
             usleep(10000)
-            print("Threads \(threadcount)")
+            //print("Threads \(threadcount)")
             
         }
     }
