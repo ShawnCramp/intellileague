@@ -123,11 +123,11 @@ class ChampsTableViewController: UITableViewController {
         for (i, image) in champImages.enumerate() {
             dispatch_async(imageQ, {
                 threadcount += 1
-                print("Threads \(threadcount)")
+                //print("Threads \(threadcount)")
                 
-                print("In Dispatch")
+                //print("In Dispatch")
                 print(image)
-                
+                //print()
                 self.champData[i] = NSData(contentsOfURL: image)!
                 dispatch_async(dispatch_get_main_queue(), {
                     // print(i)
@@ -136,7 +136,7 @@ class ChampsTableViewController: UITableViewController {
                 })
             })
             usleep(10000)
-            print("Threads \(threadcount)")
+            //print("Threads \(threadcount)")
 
         }
     }
@@ -165,9 +165,9 @@ class ChampsTableViewController: UITableViewController {
             
             // Read the JSON
             do {
-                if let ipString = NSString(data:data!, encoding: NSUTF8StringEncoding) {
+                if let _ = NSString(data:data!, encoding: NSUTF8StringEncoding) {
                     // Print what we got from the call
-                    print(ipString)
+                    //print(ipString)
                     
                     // Parse the JSON to get the IP
                     let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
@@ -175,7 +175,7 @@ class ChampsTableViewController: UITableViewController {
                     let origin = jsonDictionary["data"] as! NSDictionary
                     let sortedOrigin = (origin.allKeys as! [String]).sort(<)
                     print("JSON Champ List Size \(origin.count)")
-                    print(sortedOrigin)
+                    //print(sortedOrigin)
                     
                     for i in sortedOrigin {
                         print(i)

@@ -448,6 +448,7 @@
                                 <connections>
                                     <outlet property="itemImg" destination="Z1Y-vS-ddl" id="VKb-c1-M47"/>
                                     <outlet property="itemLabel" destination="7eP-HS-ct9" id="QqE-lu-umI"/>
+                                    <segue destination="k5j-I6-bTs" kind="show" identifier="toItem" id="4VR-8h-o01"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -461,6 +462,29 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vov-Rf-AhO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2647" y="1898"/>
+        </scene>
+        <!--Items View Controller-->
+        <scene sceneID="sJt-CT-v2Q">
+            <objects>
+                <viewController id="k5j-I6-bTs" customClass="ItemsViewController" customModule="intellileague" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3fw-Py-IyR"/>
+                        <viewControllerLayoutGuide type="bottom" id="rtV-QC-vLc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bu4-Zn-5v9">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oqx-nD-6Ln">
+                                <rect key="frame" x="52" y="41" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NAV-WJ-U6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3332" y="1901"/>
         </scene>
         <!--Builds-->
         <scene sceneID="vdV-fR-AR8">

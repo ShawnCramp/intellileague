@@ -11,8 +11,8 @@ import UIKit
 class ItemsTableViewController: UITableViewController {
     
     var itemNames : [String] = []
-    var itemImages = [NSURL]()
     var itemData = [NSData?]()
+    var itemDict = NSMutableDictionary()
     
     @IBOutlet weak var nav: UINavigationItem!
     override func viewDidLoad() {
@@ -100,15 +100,25 @@ class ItemsTableViewController: UITableViewController {
     }
     */
     
-    /*
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.
+        if segue.identifier == "toItem" {
+            let itemsViewController = segue.destinationViewController as! ItemsViewController
+            
+            // Get the cell that generated this segue.
+            if let selectedItemCell = sender as? ItemTableViewCell {
+                let indexPath = tableView.indexPathForCell(selectedItemCell)!
+                let selectedItem = itemNames[indexPath.row]
+                itemsViewController.test = selectedItem
+            }
+        }
     }
-    */
+
     
     /*
     
@@ -120,15 +130,11 @@ class ItemsTableViewController: UITableViewController {
         var threadcount = 0
         let imageQ = dispatch_queue_create("Image Q", DISPATCH_QUEUE_CONCURRENT);
         
-        for (i, image) in itemImages.enumerate() {
+        for (i, id) in self.itemDict.allKeys.enumerate() {
             dispatch_async(imageQ, {
                 threadcount += 1
-                print("Threads \(threadcount)")
-                
-                print("In Dispatch")
-                print(image)
-                
-                self.itemData[i] = NSData(contentsOfURL: image)!
+
+                self.itemData[i] = NSData(contentsOfURL: NSURL(string: "http://ddragon.leagueoflegends.com/cdn/6.6.1/img/item/\(id).png")!)
                 dispatch_async(dispatch_get_main_queue(), {
                     // print(i)
                     self.tableView.reloadData()
@@ -150,7 +156,7 @@ class ItemsTableViewController: UITableViewController {
     func updateIP() {
         
         // Setup the session to make REST GET call.  Notice the URL is https NOT http!!
-        let postEndpoint: String = "https://na.api.pvp.net/api/lol/static-data/na/v1.2/item?api_key=2472734e-3298-44d5-b026-b21e290f7959"
+        let postEndpoint: String = "https://global.api.pvp.net/api/lol/static-data/na/v1.2/item?itemListData=from,gold,maps,into&api_key=2472734e-3298-44d5-b026-b21e290f7959"
         let session = NSURLSession.sharedSession()
         let url = NSURL(string: postEndpoint)!
         
@@ -172,29 +178,15 @@ class ItemsTableViewController: UITableViewController {
                     // Parse the JSON to get the IP
                     let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
                     
-                    let origin = jsonDictionary["data"] as! NSDictionary
-                    let originKeys = origin.allKeys as! [String]
-                    //print("Item List Size \(origin.count)")
-                    //print(sortedOrigin)
-                    
-                    // Update the label
-                    var allNames = [String: String]()
-                    for i in originKeys {
-                        let itemData = origin[i] as! NSDictionary
-                        let name = itemData["name"] as! String
-                        allNames[name] = i
-                        
-                        
-                        self.itemImages.append(NSURL(string: "http://ddragon.leagueoflegends.com/cdn/6.6.1/img/item/\(i).png")!)
-                        self.itemNames.append(name)
+                    self.itemDict = jsonDictionary["data"] as! NSMutableDictionary
+                    for k in self.itemDict.allKeys {
                         self.itemData.append(nil)
-                        
+                        let v : NSMutableDictionary = self.itemDict.valueForKey(k as! String) as! NSMutableDictionary
+                        self.itemNames.append(v.valueForKey("name") as! String)
                     }
-
-                    print(allNames)
                     
                     self.asyncGetImages()
-                    // self.tableView.reloadData()
+                    self.tableView.reloadData()
                     
                     //self.performSelectorOnMainThread("insertList:", withObject: origin, waitUntilDone: false)
                 }
