@@ -19,6 +19,7 @@
 		D296C9E51CAC6C0000446A60 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D296C9E41CAC6C0000446A60 /* ItemsTableViewController.swift */; };
 		D296C9E71CAC707B00446A60 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D296C9E61CAC707B00446A60 /* ItemTableViewCell.swift */; };
 		D2ABFA631CAD7FDD0055694C /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ABFA621CAD7FDD0055694C /* ItemsViewController.swift */; };
+		D2ABFA651CADBEF30055694C /* ChampionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ABFA641CADBEF30055694C /* ChampionViewController.swift */; };
 		D2BA89451CA09B0D00FBAB21 /* ChampsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BA89441CA09B0D00FBAB21 /* ChampsTableViewController.swift */; };
 		D2BA89471CA09B2800FBAB21 /* ChampTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BA89461CA09B2800FBAB21 /* ChampTableViewCell.swift */; };
 		D2ED0C3F1C975A430079190E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ED0C3E1C975A430079190E /* SignUpViewController.swift */; };
@@ -60,6 +61,7 @@
 		D296C9E41CAC6C0000446A60 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 		D296C9E61CAC707B00446A60 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		D2ABFA621CAD7FDD0055694C /* ItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
+		D2ABFA641CADBEF30055694C /* ChampionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChampionViewController.swift; sourceTree = "<group>"; };
 		D2BA89441CA09B0D00FBAB21 /* ChampsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChampsTableViewController.swift; sourceTree = "<group>"; };
 		D2BA89461CA09B2800FBAB21 /* ChampTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChampTableViewCell.swift; sourceTree = "<group>"; };
 		D2ED0C3E1C975A430079190E /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				88CBCADD1C8B73FD00957075 /* AppDelegate.swift */,
 				88CBCAE11C8B73FD00957075 /* Main.storyboard */,
 				D2BA89441CA09B0D00FBAB21 /* ChampsTableViewController.swift */,
+				D2ABFA641CADBEF30055694C /* ChampionViewController.swift */,
 				D2BA89461CA09B2800FBAB21 /* ChampTableViewCell.swift */,
 				D296C9E61CAC707B00446A60 /* ItemTableViewCell.swift */,
 				88CBCAE41C8B73FD00957075 /* Assets.xcassets */,
@@ -285,6 +288,7 @@
 				88CBCADE1C8B73FD00957075 /* AppDelegate.swift in Sources */,
 				88AB2CEA1CAC6BD7009177B6 /* SummonerViewController.swift in Sources */,
 				D2BA89471CA09B2800FBAB21 /* ChampTableViewCell.swift in Sources */,
+				D2ABFA651CADBEF30055694C /* ChampionViewController.swift in Sources */,
 				D2ABFA631CAD7FDD0055694C /* ItemsViewController.swift in Sources */,
 				D296C9E71CAC707B00446A60 /* ItemTableViewCell.swift in Sources */,
 				D2ED0C3F1C975A430079190E /* SignUpViewController.swift in Sources */,

@@ -415,6 +415,7 @@
                                 <connections>
                                     <outlet property="champImg" destination="sE6-xa-uvO" id="HHh-tz-WQh"/>
                                     <outlet property="champName" destination="RLg-kF-mYd" id="D7Z-1K-hck"/>
+                                    <segue destination="Sce-zk-iPk" kind="show" identifier="toChampion" id="mHw-xa-cRH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -433,6 +434,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="srb-cj-ue4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2655" y="1124"/>
+        </scene>
+        <!--Champion View Controller-->
+        <scene sceneID="mQF-dk-V46">
+            <objects>
+                <viewController id="Sce-zk-iPk" customClass="ChampionViewController" customModule="intellileague" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0zo-cz-UEx"/>
+                        <viewControllerLayoutGuide type="bottom" id="dyd-Bs-VjD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hDI-DY-9jF">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2R-Iw-T3d">
+                                <rect key="frame" x="180" y="114" width="69" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3K-Zi-AdA">
+                                <rect key="frame" x="180" y="162" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple" translatesAutoresizingMaskIntoConstraints="NO" id="STV-Na-CNJ">
+                                <rect key="frame" x="52" y="96" width="96" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="96" id="Fz1-eJ-93g"/>
+                                    <constraint firstAttribute="height" constant="96" id="SeF-Op-Pyy"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="G2R-Iw-T3d" firstAttribute="leading" secondItem="STV-Na-CNJ" secondAttribute="trailing" constant="32" id="5DV-cT-0Qh"/>
+                            <constraint firstItem="STV-Na-CNJ" firstAttribute="top" secondItem="0zo-cz-UEx" secondAttribute="bottom" constant="96" id="BCL-tF-dfo"/>
+                            <constraint firstItem="STV-Na-CNJ" firstAttribute="leading" secondItem="hDI-DY-9jF" secondAttribute="leadingMargin" constant="32" id="KkD-wk-n5Z"/>
+                            <constraint firstItem="G2R-Iw-T3d" firstAttribute="top" secondItem="0zo-cz-UEx" secondAttribute="bottom" constant="114" id="dSJ-uV-CRu"/>
+                            <constraint firstItem="C3K-Zi-AdA" firstAttribute="leading" secondItem="STV-Na-CNJ" secondAttribute="trailing" constant="32" id="seM-8Z-Bm9"/>
+                            <constraint firstItem="C3K-Zi-AdA" firstAttribute="top" secondItem="G2R-Iw-T3d" secondAttribute="bottom" constant="16" id="zoT-Db-xub"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="champNameLabel" destination="G2R-Iw-T3d" id="ND9-Ey-055"/>
+                        <outlet property="imageView" destination="STV-Na-CNJ" id="fur-Vh-k1T"/>
+                        <outlet property="subNameLabel" destination="C3K-Zi-AdA" id="Lf5-V6-UE0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JXD-ca-Z9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3398" y="1130"/>
         </scene>
         <!--Items-->
         <scene sceneID="6vY-1L-GJl">
