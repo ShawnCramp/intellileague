@@ -46,14 +46,71 @@ class SignUpViewController: UIViewController {
         b.layer.cornerRadius = CORNER_RADIUS
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if signup === sender {
+            postDataToURL()
+            
+            // Save Summoner Information
+            _ = SummonerInfo()
+            SummonerInfo.summoner.name = username.text!
+            SummonerInfo.summoner.summoner = summoner.text!
+            
+        }
+        
     }
+
+    
+    
+    /*
+    
+    REST POST Calls
+
     */
+    func postDataToURL() {
+        
+        // Setup the session to make REST POST call
+        let postEndpoint: String = "http://guarded-brushlands-62127.herokuapp.com/api/summoners/"
+        let url = NSURL(string: postEndpoint)!
+        let session = NSURLSession.sharedSession()
+        let postParams : [String: AnyObject] = ["username": self.username.text!, "password": self.password.text!, "summoner": self.summoner.text!]
+        
+        // Create the request
+        let request = NSMutableURLRequest(URL: url)
+        request.HTTPMethod = "POST"
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        do {
+            request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(postParams, options: NSJSONWritingOptions())
+            print(postParams)
+        } catch {
+            print("bad things happened")
+        }
+        
+        // Make the POST call and handle it in a completion handler
+        session.dataTaskWithRequest(request, completionHandler: { ( data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+            // Make sure we get an OK response
+            guard let realResponse = response as? NSHTTPURLResponse where
+                realResponse.statusCode == 200 else {
+                    print("Not a 200 response")
+                    return
+            }
+            
+            // Read the JSON
+            if let postString = NSString(data:data!, encoding: NSUTF8StringEncoding) as? String {
+                // Print what we got from the call
+                print("POST: " + postString)
+                
+                
+                //self.performSelectorOnMainThread("updatePostLabel:", withObject: postString, waitUntilDone: false)
+            }
+            
+        }).resume()
+    }
 
 }

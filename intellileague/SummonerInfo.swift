@@ -13,7 +13,8 @@ class SummonerInfo {
     // Create Singleton Class
     static let summoner = SummonerInfo()
     
-    // Store Logged In Summoner Name
+    // Store Logged In Summoner Information
     var name = ""
+    var summoner = ""
     
 }
