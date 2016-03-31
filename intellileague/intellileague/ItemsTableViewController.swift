@@ -116,6 +116,7 @@ class ItemsTableViewController: UITableViewController {
                 let key = self.itemDict.allKeys[indexPath.row]
                 let selectedItem = self.itemDict.valueForKey(key as! String)
                 itemsViewController.itemData = (selectedItem as? NSMutableDictionary)!
+                itemsViewController.itemImg = self.itemData[indexPath.row]!
             }
         }
     }

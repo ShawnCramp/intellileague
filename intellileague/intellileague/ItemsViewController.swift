@@ -11,9 +11,26 @@ import UIKit
 class ItemsViewController: UIViewController {
 
     var itemData = NSMutableDictionary()
+    var itemImg = NSData()
+    
+    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var itemLabel: UILabel!
+    @IBOutlet weak var plaintextLabel: UILabel!
+    @IBOutlet weak var goldLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         print(itemData)
+        imgView.image = UIImage(data: itemImg)
+        itemLabel.text = itemData.valueForKey("name") as? String
+        plaintextLabel.text = itemData.valueForKey("plaintext") as? String
+        let gold : NSMutableDictionary = itemData.valueForKey("gold") as! NSMutableDictionary
+        goldLabel.text = "Cost: \(gold.valueForKey("base")!) gold"
+        descriptionLabel.text = itemData.valueForKey("description") as? String
+        
+        
+        
         // Do any additional setup after loading the view.
     }
 
