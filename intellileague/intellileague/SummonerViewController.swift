@@ -79,15 +79,16 @@ class SummonerViewController: UIViewController {
                     
                     // Get Summoner Name and ID
                     let sumName = origin["name"] as! String
-                    let sumID = origin["id"] as! Int
+                    let sumID = origin["id"] as! NSNumber
+                    print("INT ID: \(sumID)")
                     print(sumName)
                     
                     // Get Summoner Level
-                    let sumLevel = origin["summonerLevel"] as! Int
+                    let sumLevel = origin["summonerLevel"] as! NSNumber
                     print(sumLevel)
                     
                     // Get Summoner Icon
-                    let sumIcon = origin["profileIconId"] as! Int
+                    let sumIcon = origin["profileIconId"] as! NSNumber
                     let sumIconUrl = NSURL(string: "http://ddragon.leagueoflegends.com/cdn/6.6.1/img/profileicon/\(sumIcon).png")
                     print(sumIconUrl)
                     
@@ -107,7 +108,7 @@ class SummonerViewController: UIViewController {
     
     
     // Summoner Statistics
-    func summonerStatistic(id: Int) {
+    func summonerStatistic(id: NSNumber) {
         
         // Get Time Interval and set it back 1 week
         var timeInterval = NSDate().timeIntervalSince1970
@@ -175,7 +176,7 @@ class SummonerViewController: UIViewController {
         self.summonerIcon.image = UIImage(data: data)
     }
     
-    func updateLevel(level: Int) {
+    func updateLevel(level: NSNumber) {
         self.summonerLevel.text = "Level: \(level)"
     }
 

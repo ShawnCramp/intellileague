@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8885FBA41CAEF74D00E97662 /* BuildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8885FBA31CAEF74D00E97662 /* BuildViewController.swift */; };
 		88A6C53C1CADB71B007F36B0 /* BuildsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6C53B1CADB71B007F36B0 /* BuildsTableViewController.swift */; };
 		88A6C53E1CADB72C007F36B0 /* BuildTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6C53D1CADB72C007F36B0 /* BuildTableViewCell.swift */; };
 		88AB2CEA1CAC6BD7009177B6 /* SummonerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB2CE91CAC6BD7009177B6 /* SummonerViewController.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8885FBA31CAEF74D00E97662 /* BuildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildViewController.swift; sourceTree = "<group>"; };
 		88A6C53B1CADB71B007F36B0 /* BuildsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildsTableViewController.swift; sourceTree = "<group>"; };
 		88A6C53D1CADB72C007F36B0 /* BuildTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildTableViewCell.swift; sourceTree = "<group>"; };
 		88AB2CE91CAC6BD7009177B6 /* SummonerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummonerViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				88AB2CE91CAC6BD7009177B6 /* SummonerViewController.swift */,
 				88A6C53B1CADB71B007F36B0 /* BuildsTableViewController.swift */,
 				88A6C53D1CADB72C007F36B0 /* BuildTableViewCell.swift */,
+				8885FBA31CAEF74D00E97662 /* BuildViewController.swift */,
 			);
 			path = intellileague;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8885FBA41CAEF74D00E97662 /* BuildViewController.swift in Sources */,
 				88CBCB0C1C8B7F2400957075 /* LoginViewController.swift in Sources */,
 				D2BA89451CA09B0D00FBAB21 /* ChampsTableViewController.swift in Sources */,
 				88CBCADE1C8B73FD00957075 /* AppDelegate.swift in Sources */,
