@@ -20,6 +20,7 @@ class ChampionViewController: UIViewController {
     @IBOutlet var statsLabel:[UILabel] = []
     @IBOutlet var abilities: [UIImageView] = []
     @IBOutlet var abilityNames: [UILabel] = []
+    @IBOutlet var abilityDescriptions: [UILabel] = []
     
 
     override func viewDidLoad() {
@@ -58,6 +59,11 @@ class ChampionViewController: UIViewController {
         for (i, ability) in abilityNames.enumerate() {
             let spell : NSMutableDictionary = spells[i] as! NSMutableDictionary
             ability.text = spell.valueForKey("name") as? String
+        }
+        
+        for (i, ability) in abilityDescriptions.enumerate() {
+            let spell : NSMutableDictionary = spells[i] as! NSMutableDictionary
+            ability.text = spell.valueForKey("description") as? String
         }
         
         for (i, ability) in abilities.enumerate() {
