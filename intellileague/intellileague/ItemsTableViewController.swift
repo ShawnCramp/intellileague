@@ -133,20 +133,32 @@ class ItemsTableViewController: UITableViewController {
         let imageQ = dispatch_queue_create("Image Q", DISPATCH_QUEUE_CONCURRENT);
         
         for (i, id) in self.itemDict.allKeys.enumerate() {
-            dispatch_async(imageQ, {
-                threadcount += 1
-
-                self.itemData[i] = NSData(contentsOfURL: NSURL(string: "http://ddragon.leagueoflegends.com/cdn/6.6.1/img/item/\(id).png")!)
-                dispatch_async(dispatch_get_main_queue(), {
+            if self.isInSummonersRift(id as! String) {
+                dispatch_async(imageQ, {
+                    threadcount += 1
+                    
+                    self.itemData[i] = NSData(contentsOfURL: NSURL(string: "http://ddragon.leagueoflegends.com/cdn/6.6.1/img/item/\(id).png")!)
+                    dispatch_async(dispatch_get_main_queue(), {
                     // print(i)
-                    self.tableView.reloadData()
-                    threadcount -= 1
+                        self.tableView.reloadData()
+                        threadcount -= 1
+                    })
                 })
-            })
-            usleep(10000)
+                usleep(10000)
+            }
             //print("Threads \(threadcount)")
             
         }
+    }
+    
+    func isInSummonersRift(k:String) -> Bool {
+        let v : NSMutableDictionary = self.itemDict.valueForKey(k) as! NSMutableDictionary
+        let maps : NSMutableDictionary = v.valueForKey("maps") as! NSMutableDictionary
+        //print(maps)
+        if maps.valueForKey("11") as! Int == 1 {
+            return true
+        }
+        return false
     }
     
     /*
@@ -182,11 +194,12 @@ class ItemsTableViewController: UITableViewController {
                     
                     self.itemDict = jsonDictionary["data"] as! NSMutableDictionary
                     for k in self.itemDict.allKeys {
-                        self.itemData.append(nil)
                         let v : NSMutableDictionary = self.itemDict.valueForKey(k as! String) as! NSMutableDictionary
+                        self.itemData.append(nil)
                         self.itemNames.append(v.valueForKey("name") as! String)
                     }
                     
+                    //print("items count \(self.itemNames.count)")
                     self.asyncGetImages()
                     self.tableView.reloadData()
                     
