@@ -18,6 +18,7 @@ class ChampionViewController: UIViewController {
     @IBOutlet weak var subNameLabel: UILabel!
     
     @IBOutlet var statsLabel:[UILabel] = []
+    @IBOutlet var abilities: [UIImageView] = []
     
 
     override func viewDidLoad() {
@@ -28,7 +29,9 @@ class ChampionViewController: UIViewController {
         imageView.image = UIImage(data: itemImg)
         
         let stats : NSMutableDictionary = itemData.valueForKey("stats") as! NSMutableDictionary
-        print(stats)
+        let spells : NSArray = itemData.valueForKey("spells") as! NSArray
+     
+       print(spells[0])
         
         for (i, statLabel) in statsLabel.enumerate() {
             var text = ""
@@ -50,6 +53,16 @@ class ChampionViewController: UIViewController {
             }
             statLabel.text = text
         }
+        
+        for (i, ability) in abilities.enumerate() {
+            let spell : NSMutableDictionary = spells[i] as! NSMutableDictionary
+            let image = spell.valueForKey("image") as! NSMutableDictionary
+            let url = NSURL(string: "http://ddragon.leagueoflegends.com/cdn/6.6.1/img/spell/\(image.valueForKey("full") as! String)")
+            print(url)
+            ability.image = UIImage(data: NSData(contentsOfURL: url!)!)
+        }
+        
+
         
         
         
