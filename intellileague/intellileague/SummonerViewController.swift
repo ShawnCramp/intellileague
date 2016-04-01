@@ -66,9 +66,9 @@ class SummonerViewController: UIViewController {
             
             // Read the JSON
             do {
-                if let ipString = NSString(data:data!, encoding: NSUTF8StringEncoding) {
+                if let _ = NSString(data:data!, encoding: NSUTF8StringEncoding) {
                     // Print what we got from the call
-                    print(ipString)
+                    //print(ipString)
                     
                     // Parse the JSON to get the IP
                     let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
@@ -80,16 +80,16 @@ class SummonerViewController: UIViewController {
                     // Get Summoner Name and ID
                     let sumName = origin["name"] as! String
                     let sumID = origin["id"] as! Int
-                    print(sumName)
+                    //print(sumName)
                     
                     // Get Summoner Level
                     let sumLevel = origin["summonerLevel"] as! Int
-                    print(sumLevel)
+                    //print(sumLevel)
                     
                     // Get Summoner Icon
                     let sumIcon = origin["profileIconId"] as! Int
                     let sumIconUrl = NSURL(string: "http://ddragon.leagueoflegends.com/cdn/6.6.1/img/profileicon/\(sumIcon).png")
-                    print(sumIconUrl)
+                    //print(sumIconUrl)
                     
                     // Dispatch Threads to Edit Summoner Information
                     self.performSelectorOnMainThread("updateName:", withObject: sumName, waitUntilDone: false)
@@ -143,16 +143,16 @@ class SummonerViewController: UIViewController {
                     print(playerSummary)
                     
                     // Get Summoner Unranked Information
-                    let playerUnranked = playerSummary[8]
-                    print("Player Unranked:\n")
-                    print(playerUnranked)
-                    print("Player Unranked Champion Kills:\n")
-                    print(playerUnranked)
+                    let _ = playerSummary[8]
+                    //print("Player Unranked:\n")
+                    //print(playerUnranked)
+                    //print("Player Unranked Champion Kills:\n")
+                    //print(playerUnranked)
                     
                     // Get Summoner Ranked Information
-                    let playerRanked = playerSummary[9]
-                    print("Player Ranked:\n")
-                    print(playerRanked)
+                    let _ = playerSummary[9]
+                    //print("Player Ranked:\n")
+                    //print(playerRanked)
                     
                     
                     
