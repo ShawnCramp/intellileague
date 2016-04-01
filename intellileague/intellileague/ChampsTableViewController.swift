@@ -117,6 +117,7 @@ class ChampsTableViewController: UITableViewController {
                 let key = sorted[indexPath.row]
                 let selectedItem = self.champDict.valueForKey(key)
                 champViewController.itemData = (selectedItem as? NSMutableDictionary)!
+                champViewController.itemImg = self.champData[indexPath.row]!
             }
         }
     }
