@@ -19,6 +19,7 @@ class ChampionViewController: UIViewController {
     
     @IBOutlet var statsLabel:[UILabel] = []
     @IBOutlet var abilities: [UIImageView] = []
+    @IBOutlet var abilityNames: [UILabel] = []
     
 
     override func viewDidLoad() {
@@ -37,21 +38,26 @@ class ChampionViewController: UIViewController {
             var text = ""
             switch i {
             case 0:
-                text = "Health: \(stats.valueForKey("hp")!)"
-            case 1:
-                text = "Health regen: \(stats.valueForKey("hpregen")!)"
-            case 2:
                 text = "Attack damage: \(stats.valueForKey("attackdamage")!)"
+            case 1:
+                text = "Health: \(stats.valueForKey("hp")!)"
+            case 2:
+                text = "Health regen: \(stats.valueForKey("hpregen")!)"
             case 3:
-                text = "Armor: \(stats.valueForKey("armor")!)"
+                text = "Movement speed: \(stats.valueForKey("movespeed")!)"
             case 4:
-                text = "Health: \(stats.valueForKey("spellblock")!)"
+                text = "Magic resistance: \(stats.valueForKey("spellblock")!)"
             case 5:
-                text = "Health: \(stats.valueForKey("movespeed")!)"
+                text = "Armor: \(stats.valueForKey("armor")!)"
             default:
                 text = ""
             }
             statLabel.text = text
+        }
+        
+        for (i, ability) in abilityNames.enumerate() {
+            let spell : NSMutableDictionary = spells[i] as! NSMutableDictionary
+            ability.text = spell.valueForKey("name") as? String
         }
         
         for (i, ability) in abilities.enumerate() {

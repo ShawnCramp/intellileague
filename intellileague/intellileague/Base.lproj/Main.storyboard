@@ -545,6 +545,30 @@
                                             <constraint firstAttribute="width" constant="48" id="agT-vJ-ZjJ"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uls-02-O0K">
+                                        <rect key="frame" x="100" y="445" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZC-Dm-Tpl">
+                                        <rect key="frame" x="100" y="505" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeU-S2-GwN">
+                                        <rect key="frame" x="100" y="565" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybc-0s-yML">
+                                        <rect key="frame" x="100" y="625" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="pQp-mq-CKf" firstAttribute="top" secondItem="3Z2-XA-RcN" secondAttribute="bottom" constant="12" id="3iv-Gi-qSZ"/>
@@ -554,25 +578,33 @@
                                     <constraint firstItem="UQI-df-att" firstAttribute="leading" secondItem="KoV-8J-POD" secondAttribute="leading" id="9ql-DR-4iD"/>
                                     <constraint firstItem="CoZ-n5-ITc" firstAttribute="top" secondItem="QTa-6F-hcG" secondAttribute="bottom" constant="32" id="CX7-Ol-a5D"/>
                                     <constraint firstItem="KoV-8J-POD" firstAttribute="leading" secondItem="O0o-tJ-2P8" secondAttribute="leading" id="DMp-fK-fSw"/>
+                                    <constraint firstItem="Uls-02-O0K" firstAttribute="leading" secondItem="LZC-Dm-Tpl" secondAttribute="leading" id="Fbg-fY-npj"/>
                                     <constraint firstItem="Drl-dw-IvC" firstAttribute="leading" secondItem="AaO-7u-zKq" secondAttribute="leading" id="Gwu-Z5-fgw"/>
                                     <constraint firstItem="Drl-dw-IvC" firstAttribute="top" secondItem="pv3-pU-jsy" secondAttribute="bottom" constant="12" id="H6a-jg-FfY"/>
                                     <constraint firstItem="pv3-pU-jsy" firstAttribute="top" secondItem="UQI-df-att" secondAttribute="bottom" constant="12" id="HJE-qU-sTC"/>
                                     <constraint firstItem="3Z2-XA-RcN" firstAttribute="leading" secondItem="hDb-uB-lfI" secondAttribute="leading" id="JTZ-Ye-iBe"/>
+                                    <constraint firstItem="FeU-S2-GwN" firstAttribute="centerY" secondItem="pQp-mq-CKf" secondAttribute="centerY" id="Jmq-Wd-avc"/>
                                     <constraint firstItem="s2k-aE-rbe" firstAttribute="leading" secondItem="rPC-I0-OKh" secondAttribute="leading" id="LyV-Nj-PC1"/>
+                                    <constraint firstItem="FeU-S2-GwN" firstAttribute="leading" secondItem="LZC-Dm-Tpl" secondAttribute="leading" id="M1V-cE-cuf"/>
                                     <constraint firstItem="QTa-6F-hcG" firstAttribute="leading" secondItem="CoZ-n5-ITc" secondAttribute="leading" id="P0w-ln-it6"/>
+                                    <constraint firstItem="ybc-0s-yML" firstAttribute="centerY" secondItem="GB9-PH-MJO" secondAttribute="centerY" id="RNh-kF-zcj"/>
                                     <constraint firstItem="KoV-8J-POD" firstAttribute="top" secondItem="O0o-tJ-2P8" secondAttribute="bottom" constant="12" id="Sbb-aG-i7l"/>
+                                    <constraint firstItem="FeU-S2-GwN" firstAttribute="leading" secondItem="ybc-0s-yML" secondAttribute="leading" id="Xb7-l0-Mhk"/>
+                                    <constraint firstItem="Uls-02-O0K" firstAttribute="centerY" secondItem="hDb-uB-lfI" secondAttribute="centerY" id="adz-SK-SYV"/>
                                     <constraint firstItem="3Z2-XA-RcN" firstAttribute="top" secondItem="hDb-uB-lfI" secondAttribute="bottom" constant="12" id="ahn-zo-PDf"/>
                                     <constraint firstItem="GB9-PH-MJO" firstAttribute="top" secondItem="pQp-mq-CKf" secondAttribute="bottom" constant="12" id="aqw-hc-Gr3"/>
                                     <constraint firstItem="CoZ-n5-ITc" firstAttribute="leading" secondItem="hDb-uB-lfI" secondAttribute="leading" id="cC3-fI-gpK"/>
                                     <constraint firstItem="O0o-tJ-2P8" firstAttribute="top" secondItem="5so-kZ-hGC" secondAttribute="bottom" constant="32" id="co4-jo-ap3"/>
                                     <constraint firstItem="Drl-dw-IvC" firstAttribute="leading" secondItem="pv3-pU-jsy" secondAttribute="leading" id="gBC-8i-sXC"/>
                                     <constraint firstItem="QTa-6F-hcG" firstAttribute="top" secondItem="AaO-7u-zKq" secondAttribute="bottom" constant="12" id="ga4-iW-Id0"/>
+                                    <constraint firstItem="LZC-Dm-Tpl" firstAttribute="centerY" secondItem="3Z2-XA-RcN" secondAttribute="centerY" id="jJ5-8q-kxq"/>
                                     <constraint firstItem="AaO-7u-zKq" firstAttribute="top" secondItem="Drl-dw-IvC" secondAttribute="bottom" constant="12" id="l32-R4-xvy"/>
                                     <constraint firstItem="s2k-aE-rbe" firstAttribute="top" secondItem="Cvx-Yb-rRa" secondAttribute="top" constant="35" id="mZ0-wc-NzT"/>
                                     <constraint firstItem="rPC-I0-OKh" firstAttribute="top" secondItem="s2k-aE-rbe" secondAttribute="bottom" constant="12" id="mbP-ot-KcU"/>
                                     <constraint firstItem="UQI-df-att" firstAttribute="top" secondItem="KoV-8J-POD" secondAttribute="bottom" constant="12" id="nda-lp-1tN"/>
                                     <constraint firstItem="s2k-aE-rbe" firstAttribute="leading" secondItem="5so-kZ-hGC" secondAttribute="trailing" constant="12" id="rXo-WA-0pf"/>
                                     <constraint firstItem="pQp-mq-CKf" firstAttribute="leading" secondItem="GB9-PH-MJO" secondAttribute="leading" id="sXl-iY-Ys9"/>
+                                    <constraint firstItem="Uls-02-O0K" firstAttribute="leading" secondItem="hDb-uB-lfI" secondAttribute="trailing" constant="24" id="uJh-aC-HRD"/>
                                     <constraint firstItem="5so-kZ-hGC" firstAttribute="top" secondItem="Cvx-Yb-rRa" secondAttribute="top" constant="20" id="uKg-l1-X3i"/>
                                     <constraint firstItem="pv3-pU-jsy" firstAttribute="leading" secondItem="UQI-df-att" secondAttribute="leading" id="ueX-KY-qTg"/>
                                     <constraint firstItem="hDb-uB-lfI" firstAttribute="top" secondItem="CoZ-n5-ITc" secondAttribute="bottom" constant="12" id="w49-Tm-AG4"/>
@@ -607,6 +639,10 @@
                         <outletCollection property="abilities" destination="3Z2-XA-RcN" collectionClass="NSMutableArray" id="7LR-C2-ZHc"/>
                         <outletCollection property="abilities" destination="pQp-mq-CKf" collectionClass="NSMutableArray" id="CTh-8O-rDg"/>
                         <outletCollection property="abilities" destination="GB9-PH-MJO" collectionClass="NSMutableArray" id="a5Z-Xr-pVx"/>
+                        <outletCollection property="abilityNames" destination="Uls-02-O0K" collectionClass="NSMutableArray" id="EaE-UX-6rr"/>
+                        <outletCollection property="abilityNames" destination="LZC-Dm-Tpl" collectionClass="NSMutableArray" id="bYd-lR-9sJ"/>
+                        <outletCollection property="abilityNames" destination="FeU-S2-GwN" collectionClass="NSMutableArray" id="KYA-ua-i6l"/>
+                        <outletCollection property="abilityNames" destination="ybc-0s-yML" collectionClass="NSMutableArray" id="hA6-6e-mbz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JXD-ca-Z9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
