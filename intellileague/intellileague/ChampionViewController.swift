@@ -13,7 +13,6 @@ class ChampionViewController: UIViewController {
     var itemData = NSMutableDictionary()
     var itemImg = NSData()
     
-    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var champNameLabel: UILabel!
     @IBOutlet weak var subNameLabel: UILabel!
@@ -22,7 +21,7 @@ class ChampionViewController: UIViewController {
     
 
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()        
         
         champNameLabel.text = itemData.valueForKey("key") as? String
         subNameLabel.text = itemData.valueForKey("title") as? String
