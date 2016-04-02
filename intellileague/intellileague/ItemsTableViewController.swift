@@ -8,12 +8,6 @@
 
 import UIKit
 
-struct Item {
-    var name: String?
-    var data: NSData?
-    var id: String?
-}
-
 class ItemsTableViewController: UITableViewController {
     
     var itemNames : [String] = []
@@ -261,7 +255,7 @@ class ItemsTableViewController: UITableViewController {
                     
                     self.asyncGetImages()
                     self.makeNameImgDict()
-                    print(self.itemDict.valueForKey("1411"))
+      
                 }
             } catch {
                 print("bad things happened")

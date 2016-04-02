@@ -13,6 +13,25 @@ class ChampsTableViewController: UITableViewController {
     var champNames : [String] = []
     var champData = [NSData?]()
     var champDict = NSMutableDictionary()
+    var filtered : [String] = []
+    var filteredImg = [NSData?]()
+    var filteredDict = [String: NSData]()
+    var filteredNameIdDict = [String : String]()
+    
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    private func makeNameImgDict() {
+        let c = zip(champNames, champData)
+        for (name, img) in c {
+            self.filteredDict[name] = img
+        }
+        
+        let d = zip(champNames, (champDict.allKeys as! [String]).sort(<))
+        for (name, id) in d{
+            self.filteredNameIdDict[name] = id
+        }
+    }
+    
     
     @IBOutlet weak var nav: UINavigationItem!
     override func viewDidLoad() {
@@ -26,7 +45,13 @@ class ChampsTableViewController: UITableViewController {
         
         // Rest Call to Retreive Champ List
         updateIP()
-        
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = "Enter a search term"
+        searchController.searchBar.sizeToFit()
+        definesPresentationContext = true
+        searchController.dimsBackgroundDuringPresentation = false
+        tableView.tableHeaderView = searchController.searchBar
         
     }
     
@@ -44,6 +69,9 @@ class ChampsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if searchController.active && searchController.searchBar.text != "" {
+            return filtered.count
+        }
         return champNames.count
     }
     
@@ -54,11 +82,24 @@ class ChampsTableViewController: UITableViewController {
         
         // Configure the cell...
         
-        cell.champName.text = champNames[indexPath.row]
+        var s : String?
+        var img : NSData?
+        if searchController.active && searchController.searchBar.text != "" {
+            print(indexPath.row)
+            s = filtered[indexPath.row]
+            img = filteredDict[s!]
+        } else {
+            s = champNames[indexPath.row]
+            img = champData[indexPath.row]
+        }
         
-        if let i = champData[indexPath.row] {
-            cell.champImg.image = UIImage(data: i)
-            // print(i)
+        
+        
+        
+        cell.champName.text = s
+        
+        if img != nil {
+            cell.champImg.image = UIImage(data:img!)
         }
         
         return cell
@@ -108,16 +149,21 @@ class ChampsTableViewController: UITableViewController {
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.
         if segue.identifier == "toChampion" {
-            let champViewController = segue.destinationViewController as! ChampionViewController
-            
-            // Get the cell that generated this segue.
-            if let selectedItemCell = sender as? ChampTableViewCell {
-                let indexPath = tableView.indexPathForCell(selectedItemCell)!
-                let sorted = (self.champDict.allKeys as! [String]).sort(<)
-                let key = sorted[indexPath.row]
-                let selectedItem = self.champDict.valueForKey(key)
-                champViewController.itemData = (selectedItem as? NSMutableDictionary)!
-                champViewController.itemImg = self.champData[indexPath.row]!
+            if let indexPath = tableView.indexPathForSelectedRow {
+                var s: String?
+                if searchController.active && searchController.searchBar.text != "" {
+                    s = filtered[indexPath.row]
+                } else {
+                    s = champNames[indexPath.row]
+                }
+                
+                
+                print(s)
+                
+                let ivc = segue.destinationViewController as! ChampionViewController
+                ivc.itemData = champDict.valueForKey(filteredNameIdDict[s!]!)! as! NSMutableDictionary
+                ivc.itemImg = filteredDict[s!]!
+                
             }
         }
     }
@@ -189,8 +235,9 @@ class ChampsTableViewController: UITableViewController {
                         self.champNames.append(k)
                     }
                     
-                    
+                    //print(self.champDict)
                     self.asyncGetImages()
+                    self.makeNameImgDict()
                     //print("Champ Name Count: \(self.champNames.count)")
                     //print("Champ Image Count: \(self.champImages.count)")
                     //print("Champ Data Count: \(self.champData.count)")
@@ -204,4 +251,25 @@ class ChampsTableViewController: UITableViewController {
         }).resume()
     }
     
+    func filterContentForSearchText(searchText: String) {
+        filtered = champNames.filter({( name : String) -> Bool in
+            return name.lowercaseString.containsString(searchText.lowercaseString)
+        })
+        tableView.reloadData()
+    }
+    
+}
+
+extension ChampsTableViewController: UISearchBarDelegate {
+    // MARK: - UISearchBar Delegate
+    func searchBar(searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        filterContentForSearchText(searchBar.text!)
+    }
+}
+
+extension ChampsTableViewController: UISearchResultsUpdating {
+    // MARK: - UISearchResultsUpdating Delegate
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
 }
