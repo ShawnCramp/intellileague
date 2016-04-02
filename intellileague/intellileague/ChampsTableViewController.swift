@@ -143,6 +143,24 @@ class ChampsTableViewController: UITableViewController {
     
     
     // MARK: - Navigation
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if let indexPath = tableView.indexPathForSelectedRow {
+            var s: String?
+            if searchController.active && searchController.searchBar.text != "" {
+                s = filtered[indexPath.row]
+            } else {
+                s = champNames[indexPath.row]
+            }
+            
+            if let _ = filteredNameIdDict[s!] {
+                return true
+            } else {
+                return false
+            }
+        }
+        return false
+    }
+    
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

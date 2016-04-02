@@ -142,6 +142,25 @@ class ItemsTableViewController: UITableViewController {
     }
     */
     
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if let indexPath = tableView.indexPathForSelectedRow {
+            var s: String?
+            if searchController.active && searchController.searchBar.text != "" {
+                s = filtered[indexPath.row]
+            } else {
+                s = itemNames[indexPath.row]
+            }
+            
+            if let _ = filteredNameIdDict[s!] {
+                return true
+            } else {
+                return false
+            }
+        }
+        return false
+
+    }
+    
     
     // MARK: - Navigation
     
