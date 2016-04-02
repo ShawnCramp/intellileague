@@ -13,6 +13,25 @@ class ItemsTableViewController: UITableViewController {
     var itemNames : [String] = []
     var itemData = [NSData?]()
     var itemDict = NSMutableDictionary()
+    var filtered : [String] = []
+    var filteredImg = [NSData?]()
+    var filteredDict = [String: NSData]()
+    var filteredNameIdDict = [String : String]()
+    
+    //let resultsController = SearchResultsTableViewController()
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    private func makeNameImgDict() {
+        let c = zip(itemNames, itemData)
+        for (name, img) in c {
+            self.filteredDict[name] = img
+        }
+        
+        let d = zip(itemNames, itemDict.allKeys as! [String])
+        for (name, id) in d{
+            self.filteredNameIdDict[name] = id
+        }
+    }
     
     @IBOutlet weak var nav: UINavigationItem!
     override func viewDidLoad() {
@@ -26,6 +45,15 @@ class ItemsTableViewController: UITableViewController {
         
         // Rest Call to Retreive Champ List
         updateIP()
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = "Enter a search term"
+        searchController.searchBar.sizeToFit()
+        definesPresentationContext = true
+        searchController.dimsBackgroundDuringPresentation = false
+        tableView.tableHeaderView = searchController.searchBar
+        
+
         
         
     }
@@ -44,6 +72,9 @@ class ItemsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if searchController.active && searchController.searchBar.text != "" {
+            return filtered.count
+        }
         return itemNames.count
     }
     
@@ -53,12 +84,23 @@ class ItemsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as! ItemTableViewCell
         
         // Configure the cell...
+        var s : String?
+        var img : NSData?
+        if searchController.active && searchController.searchBar.text != "" {
+            s = filtered[indexPath.row]
+            img = filteredDict[s!]
+        } else {
+            s = itemNames[indexPath.row]
+            img = itemData[indexPath.row]
+        }
         
-        cell.itemLabel.text = itemNames[indexPath.row]
         
-        if let i = itemData[indexPath.row] {
-            cell.itemImg.image = UIImage(data: i)
-            // print(i)
+        
+        
+        cell.itemLabel.text = s
+        
+        if img != nil {
+        cell.itemImg.image = UIImage(data:img!)
         }
         
         return cell
@@ -107,18 +149,26 @@ class ItemsTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.
+        print(sender)
         if segue.identifier == "toItem" {
-            let itemsViewController = segue.destinationViewController as! ItemsViewController
+            if let indexPath = tableView.indexPathForSelectedRow {
+                var s: String?
+                if searchController.active && searchController.searchBar.text != "" {
+                    s = filtered[indexPath.row]
+                } else {
+                    s = itemNames[indexPath.row]
+                }
+
+                
+            print(s)
             
-            // Get the cell that generated this segue.
-            if let selectedItemCell = sender as? ItemTableViewCell {
-                let indexPath = tableView.indexPathForCell(selectedItemCell)!
-                let key = self.itemDict.allKeys[indexPath.row]
-                let selectedItem = self.itemDict.valueForKey(key as! String)
-                itemsViewController.itemData = (selectedItem as? NSMutableDictionary)!
-                itemsViewController.itemImg = self.itemData[indexPath.row]!
+            let ivc = segue.destinationViewController as! ItemsViewController
+            ivc.itemData = itemDict.valueForKey(filteredNameIdDict[s!]!)! as! NSMutableDictionary
+            ivc.itemImg = filteredDict[s!]!
+
             }
         }
+        
     }
 
     
@@ -203,12 +253,9 @@ class ItemsTableViewController: UITableViewController {
                         self.itemNames.append(v.valueForKey("name") as! String)
                     }
                     
-                    //print("items count \(self.itemNames.count)")
-                    
                     self.asyncGetImages()
-                    self.tableView.reloadData()
-                    
-                    //self.performSelectorOnMainThread("insertList:", withObject: origin, waitUntilDone: false)
+                    self.makeNameImgDict()
+      
                 }
             } catch {
                 print("bad things happened")
@@ -216,4 +263,25 @@ class ItemsTableViewController: UITableViewController {
         }).resume()
     }
     
+    
+    func filterContentForSearchText(searchText: String) {
+        filtered = itemNames.filter({( name : String) -> Bool in
+            return name.lowercaseString.containsString(searchText.lowercaseString)
+        })
+        tableView.reloadData()
+    }
+}
+
+extension ItemsTableViewController: UISearchBarDelegate {
+    // MARK: - UISearchBar Delegate
+    func searchBar(searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        filterContentForSearchText(searchBar.text!)
+    }
+}
+
+extension ItemsTableViewController: UISearchResultsUpdating {
+    // MARK: - UISearchResultsUpdating Delegate
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
 }

@@ -375,14 +375,14 @@
         <!--Champions-->
         <scene sceneID="6vJ-Lm-Mox">
             <objects>
-                <tableViewController id="HGR-1G-pO8" customClass="ChampsTableViewController" customModule="intellileague" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController extendedLayoutIncludesOpaqueBars="YES" id="HGR-1G-pO8" customClass="ChampsTableViewController" customModule="intellileague" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="a1a-Ca-fyc">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellChampion" rowHeight="70" id="UVI-lg-rdS" customClass="ChampTableViewCell" customModule="intellileague" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="70"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UVI-lg-rdS" id="Ndd-I2-CeU">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
@@ -699,19 +699,19 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JXD-ca-Z9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3398" y="1130"/>
+            <point key="canvasLocation" x="3412" y="918"/>
         </scene>
         <!--Items-->
         <scene sceneID="6vY-1L-GJl">
             <objects>
-                <tableViewController id="4WG-gO-JpB" customClass="ItemsTableViewController" customModule="intellileague" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController extendedLayoutIncludesOpaqueBars="YES" id="4WG-gO-JpB" customClass="ItemsTableViewController" customModule="intellileague" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="YQy-OX-urf">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemId" rowHeight="70" id="Zqa-bq-953" customClass="ItemTableViewCell" customModule="intellileague" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="70"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zqa-bq-953" id="RYx-Am-SEG">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
@@ -757,7 +757,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vov-Rf-AhO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2647" y="1898"/>
+            <point key="canvasLocation" x="2691" y="1895"/>
         </scene>
         <!--Items View Controller-->
         <scene sceneID="sJt-CT-v2Q">
@@ -835,7 +835,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NAV-WJ-U6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3332" y="1901"/>
+            <point key="canvasLocation" x="3470" y="1933"/>
         </scene>
         <!--Builds-->
         <scene sceneID="vdV-fR-AR8">
@@ -919,7 +919,7 @@
         <!--Item-->
         <scene sceneID="epL-EF-WUr">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CDg-fT-d88" sceneMemberID="viewController">
+                <navigationController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="CDg-fT-d88" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Q3C-vT-01J"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="oiE-kd-qeq">
@@ -941,7 +941,7 @@
         <image name="apple" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OrM-LK-Xs3"/>
+        <segue reference="jP6-oE-ezn"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.96470588239999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
 </document>
