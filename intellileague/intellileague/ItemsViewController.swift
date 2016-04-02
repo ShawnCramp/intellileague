@@ -26,7 +26,7 @@ class ItemsViewController: UIViewController {
         itemLabel.text = itemData.valueForKey("name") as? String
         plaintextLabel.text = itemData.valueForKey("plaintext") as? String
         let gold : NSMutableDictionary = itemData.valueForKey("gold") as! NSMutableDictionary
-        goldLabel.text = "Cost: \(gold.valueForKey("base")!) gold"
+        goldLabel.text = "Cost: \(gold.valueForKey("total")!) gold"
         descriptionLabel.text = itemData.valueForKey("description") as? String
         
         
