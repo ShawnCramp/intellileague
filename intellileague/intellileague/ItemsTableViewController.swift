@@ -133,7 +133,6 @@ class ItemsTableViewController: UITableViewController {
         let imageQ = dispatch_queue_create("Image Q", DISPATCH_QUEUE_CONCURRENT);
         
         for (i, id) in self.itemDict.allKeys.enumerate() {
-            if self.isInSummonersRift(id as! String) {
                 dispatch_async(imageQ, {
                     threadcount += 1
                     
@@ -145,20 +144,18 @@ class ItemsTableViewController: UITableViewController {
                     })
                 })
                 usleep(10000)
-            }
-            //print("Threads \(threadcount)")
             
+            //print("Threads \(threadcount)")
         }
     }
     
-    func isInSummonersRift(k:String) -> Bool {
-        let v : NSMutableDictionary = self.itemDict.valueForKey(k) as! NSMutableDictionary
-        let maps : NSMutableDictionary = v.valueForKey("maps") as! NSMutableDictionary
+    func filterItemsNotInSummonersRift(k:String, v:NSMutableDictionary) {
+        let data = v.valueForKey(k) as! NSMutableDictionary
+        let maps : NSMutableDictionary = data.valueForKey("maps") as! NSMutableDictionary
         //print(maps)
-        if maps.valueForKey("11") as! Int == 1 {
-            return true
+        if maps.valueForKey("11") as! Int != 1 {
+            v.removeObjectForKey(k)
         }
-        return false
     }
     
     /*
@@ -192,7 +189,14 @@ class ItemsTableViewController: UITableViewController {
                     // Parse the JSON to get the IP
                     let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
                     
-                    self.itemDict = jsonDictionary["data"] as! NSMutableDictionary
+                    let unFiltered = jsonDictionary["data"] as! NSMutableDictionary
+                    print("before filter \(self.itemDict.count)")
+                    for k in unFiltered.allKeys {
+                        self.filterItemsNotInSummonersRift(k as! String, v: unFiltered)
+                    }
+                    self.itemDict = unFiltered
+                    print("after filter \(self.itemDict.count)")
+                    
                     for k in self.itemDict.allKeys {
                         let v : NSMutableDictionary = self.itemDict.valueForKey(k as! String) as! NSMutableDictionary
                         self.itemData.append(nil)
@@ -200,6 +204,7 @@ class ItemsTableViewController: UITableViewController {
                     }
                     
                     //print("items count \(self.itemNames.count)")
+                    
                     self.asyncGetImages()
                     self.tableView.reloadData()
                     
