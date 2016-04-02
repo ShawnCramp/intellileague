@@ -16,6 +16,10 @@
 		88CBCAFE1C8B73FD00957075 /* intellileagueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CBCAFD1C8B73FD00957075 /* intellileagueUITests.swift */; };
 		88CBCB0C1C8B7F2400957075 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CBCB0B1C8B7F2400957075 /* LoginViewController.swift */; };
 		88CBCB0E1C8B7FB500957075 /* SummonerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CBCB0D1C8B7FB500957075 /* SummonerInfo.swift */; };
+		D28D4D631CB075970048E5E3 /* BuildsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28D4D5F1CB075970048E5E3 /* BuildsTableViewController.swift */; };
+		D28D4D641CB075970048E5E3 /* BuildTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28D4D601CB075970048E5E3 /* BuildTableViewCell.swift */; };
+		D28D4D651CB075970048E5E3 /* BuildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28D4D611CB075970048E5E3 /* BuildViewController.swift */; };
+		D28D4D661CB075970048E5E3 /* NewBuildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28D4D621CB075970048E5E3 /* NewBuildViewController.swift */; };
 		D296C9E51CAC6C0000446A60 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D296C9E41CAC6C0000446A60 /* ItemsTableViewController.swift */; };
 		D296C9E71CAC707B00446A60 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D296C9E61CAC707B00446A60 /* ItemTableViewCell.swift */; };
 		D2ABFA631CAD7FDD0055694C /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ABFA621CAD7FDD0055694C /* ItemsViewController.swift */; };
@@ -58,6 +62,10 @@
 		88CBCAFF1C8B73FD00957075 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88CBCB0B1C8B7F2400957075 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		88CBCB0D1C8B7FB500957075 /* SummonerInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummonerInfo.swift; sourceTree = "<group>"; };
+		D28D4D5F1CB075970048E5E3 /* BuildsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildsTableViewController.swift; sourceTree = "<group>"; };
+		D28D4D601CB075970048E5E3 /* BuildTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildTableViewCell.swift; sourceTree = "<group>"; };
+		D28D4D611CB075970048E5E3 /* BuildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildViewController.swift; sourceTree = "<group>"; };
+		D28D4D621CB075970048E5E3 /* NewBuildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBuildViewController.swift; sourceTree = "<group>"; };
 		D296C9E41CAC6C0000446A60 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 		D296C9E61CAC707B00446A60 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		D2ABFA621CAD7FDD0055694C /* ItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +138,10 @@
 				88CBCB0B1C8B7F2400957075 /* LoginViewController.swift */,
 				D2ED0C3E1C975A430079190E /* SignUpViewController.swift */,
 				88AB2CE91CAC6BD7009177B6 /* SummonerViewController.swift */,
+				D28D4D5F1CB075970048E5E3 /* BuildsTableViewController.swift */,
+				D28D4D601CB075970048E5E3 /* BuildTableViewCell.swift */,
+				D28D4D611CB075970048E5E3 /* BuildViewController.swift */,
+				D28D4D621CB075970048E5E3 /* NewBuildViewController.swift */,
 			);
 			path = intellileague;
 			sourceTree = "<group>";
@@ -288,10 +300,14 @@
 				88CBCADE1C8B73FD00957075 /* AppDelegate.swift in Sources */,
 				88AB2CEA1CAC6BD7009177B6 /* SummonerViewController.swift in Sources */,
 				D2BA89471CA09B2800FBAB21 /* ChampTableViewCell.swift in Sources */,
+				D28D4D641CB075970048E5E3 /* BuildTableViewCell.swift in Sources */,
 				D2ABFA651CADBEF30055694C /* ChampionViewController.swift in Sources */,
 				D2ABFA631CAD7FDD0055694C /* ItemsViewController.swift in Sources */,
 				D296C9E71CAC707B00446A60 /* ItemTableViewCell.swift in Sources */,
+				D28D4D631CB075970048E5E3 /* BuildsTableViewController.swift in Sources */,
 				D2ED0C3F1C975A430079190E /* SignUpViewController.swift in Sources */,
+				D28D4D661CB075970048E5E3 /* NewBuildViewController.swift in Sources */,
+				D28D4D651CB075970048E5E3 /* BuildViewController.swift in Sources */,
 				88CBCB0E1C8B7FB500957075 /* SummonerInfo.swift in Sources */,
 				D296C9E51CAC6C0000446A60 /* ItemsTableViewController.swift in Sources */,
 			);
