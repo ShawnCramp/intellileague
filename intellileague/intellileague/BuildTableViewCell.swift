@@ -12,6 +12,7 @@ class BuildTableViewCell: UITableViewCell {
 
     @IBOutlet weak var buildImage: UIImageView!
     @IBOutlet weak var buildName: UILabel!
+    @IBOutlet weak var buildChampion: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

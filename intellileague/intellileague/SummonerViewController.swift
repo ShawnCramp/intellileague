@@ -10,10 +10,26 @@ import UIKit
 
 class SummonerViewController: UIViewController {
     
+    // Summoner Information
     @IBOutlet weak var summonerLevel: UILabel!
     @IBOutlet weak var summonerName: UILabel!
     @IBOutlet weak var summonerIcon: UIImageView!
-
+    
+    // Averages Labels (Normals)
+    @IBOutlet weak var normWins: UILabel!
+    @IBOutlet weak var normLoss: UILabel!
+    @IBOutlet weak var normKills: UILabel!
+    @IBOutlet weak var normMinions: UILabel!
+    @IBOutlet weak var normTurrets: UILabel!
+    
+    // Averages Labels (Ranked)
+    @IBOutlet weak var rankWins: UILabel!
+    @IBOutlet weak var rankLoss: UILabel!
+    @IBOutlet weak var rankKills: UILabel!
+    @IBOutlet weak var rankMinions: UILabel!
+    @IBOutlet weak var rankTurrets: UILabel!
+    
+    // View Load
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -144,21 +160,49 @@ class SummonerViewController: UIViewController {
                     print(playerSummary)
                     
                     // Get Summoner Unranked Information
-                    let playerUnranked = playerSummary[8]
-                    print("Player Unranked:\n")
-                    print(playerUnranked)
-                    print("Player Unranked Champion Kills:\n")
-                    print(playerUnranked)
+                    let playerUnranked = playerSummary[10]
                     
                     // Get Summoner Ranked Information
-                    let playerRanked = playerSummary[9]
-                    print("Player Ranked:\n")
-                    print(playerRanked)
+                    let playerRanked = playerSummary[8]
                     
+                    // Norm Stats
+                    let normData = playerUnranked as! NSDictionary
+                    print("Norms")
+                    print(normData)
+                    let normWins = normData["wins"] as! NSNumber
+                    // Norm Agg Data
+                    let normAggData = normData["aggregatedStats"] as! NSDictionary
+                    let normAssists = normAggData["totalAssists"] as! NSNumber
+                    let normKills = normAggData["totalChampionKills"] as! NSNumber
+                    let normMinions = normAggData["totalMinionKills"] as! NSNumber
+                    let normTurrets = normAggData["totalTurretsKilled"] as! NSNumber
+                    
+                    // Ranked Stats
+                    let rankData = playerRanked as! NSDictionary
+                    print("Ranked")
+                    print(rankData)
+                    let rankWins = rankData["wins"] as! NSNumber
+                    let rankLoss = rankData["losses"] as! NSNumber
+                    
+                    // Norm Agg Data
+                    let rankAggData = rankData["aggregatedStats"] as! NSDictionary
+                    let rankKills = rankAggData["totalChampionKills"] as! NSNumber
+                    let rankMinions = rankAggData["totalMinionKills"] as! NSNumber
+                    let rankTurrets = rankAggData["totalTurretsKilled"] as! NSNumber
                     
                     
                     // Dispatch Threads to Edit Summoner Information
-                    //self.performSelectorOnMainThread("updateName:", withObject: sumName, waitUntilDone: false)
+                    self.performSelectorOnMainThread("updateNormWins:", withObject: "\(normWins)", waitUntilDone: false)
+                    self.performSelectorOnMainThread("updateNormAssists:", withObject: "\(normAssists)", waitUntilDone: false)
+                    self.performSelectorOnMainThread("updateNormKills:", withObject: "\(normKills)", waitUntilDone: false)
+                    self.performSelectorOnMainThread("updateNormMinions:", withObject: "\(normMinions)", waitUntilDone: false)
+                    self.performSelectorOnMainThread("updateNormTurrets:", withObject: "\(normTurrets)", waitUntilDone: false)
+                    
+                    self.performSelectorOnMainThread("updateRankWins:", withObject: "\(rankWins)", waitUntilDone: false)
+                    self.performSelectorOnMainThread("updateRankLoss:", withObject: "\(rankLoss)", waitUntilDone: false)
+                    self.performSelectorOnMainThread("updateRankKills:", withObject: "\(rankKills)", waitUntilDone: false)
+                    self.performSelectorOnMainThread("updateRankMinions:", withObject: "\(rankMinions)", waitUntilDone: false)
+                    self.performSelectorOnMainThread("updateRankTurrets:", withObject: "\(rankTurrets)", waitUntilDone: false)
                 }
             } catch {
                 print("bad things happened")
@@ -178,6 +222,48 @@ class SummonerViewController: UIViewController {
     
     func updateLevel(level: NSNumber) {
         self.summonerLevel.text = "Level: \(level)"
+    }
+    
+    // Norm Labels
+    func updateNormWins(text: String) {
+        self.normWins.text = text
+    }
+    
+    func updateNormAssists(text: String) {
+        self.normLoss.text = text
+    }
+    
+    func updateNormKills(text: String) {
+        self.normKills.text = text
+    }
+    
+    func updateNormMinions(text: String) {
+        self.normMinions.text = text
+    }
+    
+    func updateNormTurrets(text: String) {
+        self.normTurrets.text = text
+    }
+    
+    // Rank Labels
+    func updateRankWins(text: String) {
+        self.rankWins.text = text
+    }
+    
+    func updateRankLoss(text: String) {
+        self.rankLoss.text = text
+    }
+    
+    func updateRankKills(text: String) {
+        self.rankKills.text = text
+    }
+    
+    func updateRankMinions(text: String) {
+        self.rankMinions.text = text
+    }
+    
+    func updateRankTurrets(text: String) {
+        self.rankTurrets.text = text
     }
 
 

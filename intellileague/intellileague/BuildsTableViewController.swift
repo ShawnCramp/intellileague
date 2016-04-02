@@ -10,11 +10,13 @@ import UIKit
 
 class BuildsTableViewController: UITableViewController {
     
+    // 
     var buildNames = [String]()
     var buildPatches = [String]()
     var buildChamps = [NSNumber]()
     var buildDesc = [String]()
     var buildPK = [NSNumber]()
+    var buildOwner = [String]()
     
     // Image Arrays
     var buildImages = [NSURL]()
@@ -60,6 +62,7 @@ class BuildsTableViewController: UITableViewController {
 
         // Configure the cell...
         cell.buildName.text = buildNames[indexPath.row]
+        cell.buildChampion.text = "Creator: \(buildOwner[indexPath.row])"
         print(buildNames[indexPath.row])
         
         if let i = buildData[indexPath.row] {
@@ -135,6 +138,8 @@ class BuildsTableViewController: UITableViewController {
                 buildViewController.championData = buildChamps[indexPath.row]
                 buildViewController.patchData = buildPatches[indexPath.row]
                 buildViewController.descData = buildDesc[indexPath.row]
+                buildViewController.pkData = buildPK[indexPath.row]
+                buildViewController.owner = buildOwner[indexPath.row]
                 
             }
             
@@ -215,6 +220,9 @@ class BuildsTableViewController: UITableViewController {
                         let champion = j["champion"] as! NSNumber
                         let description = j["description"] as! String
                         let pk = j["pk"] as! NSNumber
+                        let owner = j["owner"] as! String
+                        print("pk: \(pk)")
+                        
                         
                         // Insert Records
                         self.buildNames.append(name)
@@ -223,6 +231,7 @@ class BuildsTableViewController: UITableViewController {
                         self.buildDesc.append(description)
                         self.buildPK.append(pk)
                         self.buildData.append(nil)
+                        self.buildOwner.append(owner)
                         
                         
                         self.getChampImage(champion)
