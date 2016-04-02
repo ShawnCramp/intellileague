@@ -13,6 +13,8 @@ class ItemsTableViewController: UITableViewController {
     var itemNames : [String] = []
     var itemData = [NSData?]()
     var itemDict = NSMutableDictionary()
+    var searchController: UISearchController!
+    let resultsController = SearchResultsTableViewController()
     
     @IBOutlet weak var nav: UINavigationItem!
     override func viewDidLoad() {
@@ -26,7 +28,26 @@ class ItemsTableViewController: UITableViewController {
         
         // Rest Call to Retreive Champ List
         updateIP()
+       
+        //resultsController.names = self.itemNames
+//        self.searchController =
+//            UISearchController(searchResultsController: resultsController)
+//        
+//        
+//        let searchBar = self.searchController.searchBar
+//        searchBar.placeholder = "Enter a search term"
+//        searchBar.sizeToFit()
+//        
+//        self.tableView.tableHeaderView = searchBar
+//        self.searchController.searchResultsUpdater = resultsController
         
+
+        
+        //self.tableView.sectionIndexBackgroundColor = UIColor.blackColor()
+        //self.tableView.sectionIndexTrackingBackgroundColor = UIColor.darkGrayColor()
+        //tableView.sectionIndexColor = UIColor.whiteColor()
+        
+
         
     }
     
@@ -204,9 +225,27 @@ class ItemsTableViewController: UITableViewController {
                     }
                     
                     //print("items count \(self.itemNames.count)")
+
+                    
+
                     
                     self.asyncGetImages()
-                    self.tableView.reloadData()
+                    //self.tableView.reloadData()
+                    
+                    let resultsController = SearchResultsTableViewController()
+                    resultsController.names = self.itemNames
+                    resultsController.itemData = self.itemData
+                    self.searchController =
+                        UISearchController(searchResultsController: resultsController)
+                    
+                    
+                    let searchBar = self.searchController.searchBar
+                    searchBar.placeholder = "Enter a search term"
+                    searchBar.sizeToFit()
+                    
+                    self.tableView.tableHeaderView = searchBar
+                    self.searchController.searchResultsUpdater = resultsController
+
                     
                     //self.performSelectorOnMainThread("insertList:", withObject: origin, waitUntilDone: false)
                 }

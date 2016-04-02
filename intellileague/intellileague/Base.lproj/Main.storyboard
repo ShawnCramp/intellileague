@@ -699,7 +699,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JXD-ca-Z9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3398" y="1130"/>
+            <point key="canvasLocation" x="3412" y="918"/>
         </scene>
         <!--Items-->
         <scene sceneID="6vY-1L-GJl">
@@ -919,7 +919,7 @@
         <!--Item-->
         <scene sceneID="epL-EF-WUr">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CDg-fT-d88" sceneMemberID="viewController">
+                <navigationController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="CDg-fT-d88" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Q3C-vT-01J"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="oiE-kd-qeq">
@@ -941,7 +941,7 @@
         <image name="apple" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OrM-LK-Xs3"/>
+        <segue reference="jP6-oE-ezn"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.96470588239999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
 </document>
