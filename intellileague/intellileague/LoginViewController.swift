@@ -55,26 +55,26 @@ class LoginViewController: UIViewController {
     
     // MARK: - Navigation
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
-//        if login === sender {
-//            self.statusGet = true
-//            updateIP()
-//            
-//            // Wait while Session is getting username (basicly a ghetto promise)
-//            while self.statusGet == true {
-//                usleep(10000)
-//            }
-//            
-//            print("Valid Login: \(self.validLogin)")
-//            if self.validLogin == true {
-//                print("yes")
-//                return true
-//                
-//            } else {
-//                print("no")
-//                invalidLoginLabel.text = "Invalid Login"
-//                return false
-//            }
-//        }
+        if login === sender {
+            self.statusGet = true
+            updateIP()
+            
+            // Wait while Session is getting username (basicly a ghetto promise)
+            while self.statusGet == true {
+                usleep(10000)
+            }
+            
+            print("Valid Login: \(self.validLogin)")
+            if self.validLogin == true {
+                print("yes")
+                return true
+                
+            } else {
+                print("no")
+                invalidLoginLabel.text = "Invalid Login"
+                return false
+            }
+        }
         
         return true
         
