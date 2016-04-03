@@ -159,14 +159,21 @@ class SummonerViewController: UIViewController {
                     let playerSummary = jsonDictionary["playerStatSummaries"] as! NSArray
                     print(playerSummary)
                     
-                    // Get Summoner Unranked Information
-                    let playerUnranked = playerSummary[10]
-                    
-                    // Get Summoner Ranked Information
-                    let playerRanked = playerSummary[8]
+                    // Get Summoner UnRanked Information
+                    var playerUnranked = NSDictionary()
+                    var playerRanked = NSDictionary()
+                    for i in playerSummary {
+                        let j = i as! NSDictionary
+                        if j["playerStatSummaryType"] as! String == "Unranked" {
+                            playerUnranked = j
+                        } else if j["playerStatSummaryType"] as! String == "RankedSolo5x5" {
+                            playerRanked = j
+                        }
+                        
+                    }
                     
                     // Norm Stats
-                    let normData = playerUnranked as! NSDictionary
+                    let normData = playerUnranked
                     print("Norms")
                     print(normData)
                     let normWins = normData["wins"] as! NSNumber
@@ -178,7 +185,7 @@ class SummonerViewController: UIViewController {
                     let normTurrets = normAggData["totalTurretsKilled"] as! NSNumber
                     
                     // Ranked Stats
-                    let rankData = playerRanked as! NSDictionary
+                    let rankData = playerRanked
                     print("Ranked")
                     print(rankData)
                     let rankWins = rankData["wins"] as! NSNumber
