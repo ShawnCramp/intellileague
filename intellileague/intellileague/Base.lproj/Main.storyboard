@@ -362,9 +362,7 @@
                             <outlet property="delegate" destination="HGR-1G-pO8" id="pg9-rw-zBG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Champions" id="qed-Xf-rJb">
-                        <barButtonItem key="rightBarButtonItem" title="Categories" id="988-8X-aey"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Champions" id="qed-Xf-rJb"/>
                     <connections>
                         <outlet property="nav" destination="qed-Xf-rJb" id="wdu-ZD-vjl"/>
                     </connections>
