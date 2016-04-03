@@ -31,11 +31,32 @@ class BuildsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        /*
         updateIP()
         sleep(1)
         self.asyncGetImages()
         print("IP Updates")
+*/
         // self.tableView.reloadData()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        buildNames = [String]()
+        buildPatches = [String]()
+        buildChamps = [NSNumber]()
+        buildDesc = [String]()
+        buildPK = [NSNumber]()
+        buildOwner = [String]()
+        
+        // Image Arrays
+        buildImages = [NSURL]()
+        buildData = [NSData?]()
+        
+        
+        updateIP()
+        sleep(1)
+        self.asyncGetImages()
+        print("IP Updates")
     }
 
     override func didReceiveMemoryWarning() {
