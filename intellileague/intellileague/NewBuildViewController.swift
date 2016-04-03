@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewBuildViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class NewBuildViewController: UIViewController{
     
     @IBOutlet weak var championPicker: UITextField!
     
@@ -24,12 +24,6 @@ class NewBuildViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var inputItem05: UITextField!
     @IBOutlet weak var inputItem06: UITextField!
     
-    // Pickers
-    @IBOutlet weak var itemPicker01: UIPickerView!
-    @IBOutlet weak var itemPicker02: UIPickerView!
-    
-    let sample = ["a", "b", "c"]
-    let sample2 = ["d", "e", "f"]
     
     
     // Globals
@@ -37,40 +31,11 @@ class NewBuildViewController: UIViewController, UIPickerViewDataSource, UIPicker
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Setup Pickers
-        itemPicker01 = UIPickerView()
-        itemPicker02 = UIPickerView()
-        itemPicker01.dataSource = self
-        itemPicker02.dataSource = self
-        itemPicker01.delegate = self
-        itemPicker02.delegate = self
-        itemPicker01.tag = 0
-        itemPicker02.tag = 1
 
         // Do any additional setup after loading the view.
         self.title = "New Build"
         
         
-    }
-    
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int  {
-        return 1
-    }
-    
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        if pickerView.tag == 0 {
-            return sample[row]
-        } else if pickerView.tag == 1 {
-            return sample2[row]
-        }
-        
-        return ""
-    }
-    
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return sample.count;
     }
 
     override func didReceiveMemoryWarning() {

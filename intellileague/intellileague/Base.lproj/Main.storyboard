@@ -1307,7 +1307,7 @@
                         <viewControllerLayoutGuide type="bottom" id="7Rh-24-oGU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7WD-qu-1Qc">
-                        <rect key="frame" x="0.0" y="64" width="600" height="1136"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Build" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSj-nv-nTm">
@@ -1441,17 +1441,10 @@
                                     <action selector="buttonSaveBuild:" destination="YwO-pX-YdK" eventType="touchUpInside" id="Qzi-G5-ri1"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhh-7b-YO2">
-                                <rect key="frame" x="0.0" y="492" width="600" height="216"/>
-                            </pickerView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shJ-vu-ObH">
-                                <rect key="frame" x="0.0" y="716" width="600" height="216"/>
-                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Nmu-dJ-ClC" firstAttribute="leading" secondItem="Zop-i5-usB" secondAttribute="leading" id="010-Pn-HTy"/>
-                            <constraint firstItem="hhh-7b-YO2" firstAttribute="leading" secondItem="7WD-qu-1Qc" secondAttribute="leading" id="0gS-dF-GuX"/>
                             <constraint firstItem="PXK-lI-1Up" firstAttribute="trailing" secondItem="iKO-ku-beJ" secondAttribute="trailing" id="1Ya-2a-SaX"/>
                             <constraint firstItem="6xI-bA-Rex" firstAttribute="leading" secondItem="Olg-db-LsV" secondAttribute="leading" id="2IC-Vr-fbx"/>
                             <constraint firstItem="Nmu-dJ-ClC" firstAttribute="top" secondItem="PXK-lI-1Up" secondAttribute="bottom" constant="8" symbolic="YES" id="48y-s8-Vk4"/>
@@ -1465,15 +1458,12 @@
                             <constraint firstItem="VKT-Kc-dvt" firstAttribute="leading" secondItem="IvN-wB-viT" secondAttribute="leading" id="DGP-Ak-Byd"/>
                             <constraint firstItem="Nmu-dJ-ClC" firstAttribute="leading" secondItem="PXK-lI-1Up" secondAttribute="leading" id="Eoi-vd-Yxa"/>
                             <constraint firstItem="TXL-Cp-wpt" firstAttribute="top" secondItem="pSj-nv-nTm" secondAttribute="bottom" constant="33" id="FlT-Jl-3rm"/>
-                            <constraint firstItem="shJ-vu-ObH" firstAttribute="trailing" secondItem="hhh-7b-YO2" secondAttribute="trailing" id="H7a-9d-C7T"/>
                             <constraint firstItem="iKO-ku-beJ" firstAttribute="leading" secondItem="TVJ-Gb-8wg" secondAttribute="trailing" constant="8" symbolic="YES" id="IMP-1s-vO7"/>
                             <constraint firstItem="rDz-Rw-GMD" firstAttribute="leading" secondItem="pf1-1I-rRh" secondAttribute="leading" id="Iie-3R-Gqo"/>
                             <constraint firstItem="6xI-bA-Rex" firstAttribute="trailing" secondItem="Olg-db-LsV" secondAttribute="trailing" id="JlR-25-iC3"/>
                             <constraint firstItem="VKT-Kc-dvt" firstAttribute="top" secondItem="IvN-wB-viT" secondAttribute="bottom" constant="8" symbolic="YES" id="Mlh-Rc-om9"/>
                             <constraint firstItem="VKT-Kc-dvt" firstAttribute="trailing" secondItem="IvN-wB-viT" secondAttribute="trailing" id="OXe-DI-Jcz"/>
-                            <constraint firstItem="hhh-7b-YO2" firstAttribute="centerX" secondItem="n71-Gs-vil" secondAttribute="centerX" id="OtV-E4-Pha"/>
                             <constraint firstItem="Nmu-dJ-ClC" firstAttribute="leading" secondItem="wyJ-82-0wb" secondAttribute="trailing" constant="8" symbolic="YES" id="PJF-Z3-Pof"/>
-                            <constraint firstItem="hhh-7b-YO2" firstAttribute="top" secondItem="n71-Gs-vil" secondAttribute="bottom" constant="8" symbolic="YES" id="SXG-bf-U3p"/>
                             <constraint firstItem="Zop-i5-usB" firstAttribute="trailing" secondItem="IvN-wB-viT" secondAttribute="trailing" id="SqC-Gq-kiO"/>
                             <constraint firstItem="Cwa-20-KrR" firstAttribute="centerY" secondItem="IvN-wB-viT" secondAttribute="centerY" id="SyC-qk-6vo"/>
                             <constraint firstItem="IvN-wB-viT" firstAttribute="top" secondItem="Zop-i5-usB" secondAttribute="bottom" constant="8" symbolic="YES" id="TL6-E4-75n"/>
@@ -1485,7 +1475,6 @@
                             <constraint firstItem="Ayn-U4-KhA" firstAttribute="centerY" secondItem="PXK-lI-1Up" secondAttribute="centerY" id="a2f-yq-uBT"/>
                             <constraint firstItem="0e4-DP-fed" firstAttribute="centerY" secondItem="d0r-87-C9p" secondAttribute="centerY" id="avx-de-7fY"/>
                             <constraint firstItem="0e4-DP-fed" firstAttribute="top" secondItem="6xI-bA-Rex" secondAttribute="bottom" constant="8" symbolic="YES" id="bBh-Ke-kSK"/>
-                            <constraint firstItem="shJ-vu-ObH" firstAttribute="top" secondItem="hhh-7b-YO2" secondAttribute="bottom" constant="8" symbolic="YES" id="bUn-Br-BaI"/>
                             <constraint firstItem="0e4-DP-fed" firstAttribute="trailing" secondItem="6xI-bA-Rex" secondAttribute="trailing" id="cpQ-6p-TEW"/>
                             <constraint firstItem="pSj-nv-nTm" firstAttribute="top" secondItem="7WD-qu-1Qc" secondAttribute="top" constant="20" symbolic="YES" id="dKb-hT-LdK"/>
                             <constraint firstItem="PXK-lI-1Up" firstAttribute="trailing" secondItem="Nmu-dJ-ClC" secondAttribute="trailing" id="dlO-sM-QP0"/>
@@ -1508,11 +1497,8 @@
                             <constraint firstItem="PXK-lI-1Up" firstAttribute="leading" secondItem="Ayn-U4-KhA" secondAttribute="trailing" constant="8" symbolic="YES" id="uoN-cs-Rja"/>
                             <constraint firstItem="0e4-DP-fed" firstAttribute="leading" secondItem="d0r-87-C9p" secondAttribute="trailing" constant="8" symbolic="YES" id="xHz-DB-MV7"/>
                             <constraint firstItem="iKO-ku-beJ" firstAttribute="top" secondItem="0e4-DP-fed" secondAttribute="bottom" constant="8" symbolic="YES" id="xtR-cL-5ew"/>
-                            <constraint firstItem="shJ-vu-ObH" firstAttribute="leading" secondItem="hhh-7b-YO2" secondAttribute="leading" id="zfr-XX-T9e"/>
                         </constraints>
                     </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="1200"/>
                     <connections>
                         <outlet property="inputChamp" destination="TXL-Cp-wpt" id="blX-KW-5sf"/>
                         <outlet property="inputDesc" destination="0e4-DP-fed" id="ZdI-iK-hXy"/>
@@ -1524,8 +1510,6 @@
                         <outlet property="inputItem06" destination="VKT-Kc-dvt" id="1wW-y2-zJ3"/>
                         <outlet property="inputRole" destination="6xI-bA-Rex" id="bqb-bL-knm"/>
                         <outlet property="inputTitle" destination="Olg-db-LsV" id="8Ib-bX-DUE"/>
-                        <outlet property="itemPicker01" destination="hhh-7b-YO2" id="eYH-Jm-Goa"/>
-                        <outlet property="itemPicker02" destination="shJ-vu-ObH" id="eFl-OH-hED"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WGk-hF-1WG" userLabel="First Responder" sceneMemberID="firstResponder"/>
