@@ -207,7 +207,7 @@ class BuildViewController: UIViewController {
             
             // Read the JSON
             do {
-                if let ipString = NSString(data:data!, encoding: NSUTF8StringEncoding) {
+                if let _ = NSString(data:data!, encoding: NSUTF8StringEncoding) {
                     // Print what we got from the call
                     //print("Item Information")
                     //print(ipString)

@@ -236,7 +236,7 @@ class ItemsTableViewController: UITableViewController {
     func updateIP() {
         
         // Setup the session to make REST GET call.  Notice the URL is https NOT http!!
-        let postEndpoint: String = "https://global.api.pvp.net/api/lol/static-data/na/v1.2/item?itemListData=from,gold,maps,into&api_key=2472734e-3298-44d5-b026-b21e290f7959"
+        let postEndpoint: String = "https://global.api.pvp.net/api/lol/static-data/na/v1.2/item?itemListData=from,gold,maps,sanitizedDescription,into&api_key=2472734e-3298-44d5-b026-b21e290f7959"
         let session = NSURLSession.sharedSession()
         let url = NSURL(string: postEndpoint)!
         
